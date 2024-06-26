@@ -106,20 +106,26 @@ header {
 .dish p {
     margin: auto;
     color: #ffffff;
+	    align: left;
+    text-align: left;
 }
 
 .price {
     color: #CDA434;
+    align: center;
+    text-align: center;
 }
 
 .description {
     font-size: 0.9em;
     color: #ffffff;
+    align: right;
+    text-align: right;
 }
 
 @media only screen and (max-width: 768px) {
     .menus {
-        text-align: left;
+        text-align: center;
     }
 
     .menus li {
