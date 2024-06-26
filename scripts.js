@@ -62,7 +62,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const issuesContainer = document.getElementById('issues');
 
     fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/issues`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(issues => {
             issues.forEach(issue => {
                 const issueElement = document.createElement('div');
@@ -85,10 +90,5 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => console.error('Error fetching issues:', error));
 });
 
-const token = 'YOUR_PERSONAL_ACCESS_TOKEN';
-fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/issues`, {
-    headers: {
-        'Authorization': `token ${token}`
-    }
 })
 
