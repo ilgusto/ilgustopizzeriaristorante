@@ -58,8 +58,10 @@ function createSparks(e) {
 }
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('issueForm');
+    const issuesContainer = document.getElementById('issues');
     const repoOwner = 'ilgusto';
     const repoName = 'ilgustopizzeriaristorante';
+    const token = 'YOUR_PERSONAL_ACCESS_TOKEN'; // Usa una soluzione di backend per proteggere il token
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -87,12 +89,64 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(issue => {
             alert(`Issue created: ${issue.html_url}`);
             form.reset();
+            loadIssues(); // Ricarica le issue dopo averne creata una nuova
         })
         .catch(error => {
             console.error('Error creating issue:', error);
             alert('Error creating issue');
         });
     });
+
+    function loadIssues() {
+        fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/issues`)
+            .then(response => response.json())
+            .then(issues => {
+                issuesContainer.innerHTML = '';
+                issues.forEach(issue => {
+                    const issueElement = document.createElement('div');
+                    issueElement.classList.add('issue');
+
+                    const titleElement = document.createElement('div');
+                    titleElement.classList.add('issue-title');
+                    titleElement.innerHTML = `<a href="${issue.html_url}" target="_blank">${issue.title}</a>`;
+
+                    const bodyElement = document.createElement('div');
+                    bodyElement.classList.add('issue-body');
+                    bodyElement.textContent = issue.body;
+
+                    issueElement.appendChild(titleElement);
+                    issueElement.appendChild(bodyElement);
+
+                    // Carica i commenti per ogni issue
+                    loadComments(issue.comments_url, issueElement);
+
+                    issuesContainer.appendChild(issueElement);
+                });
+            })
+            .catch(error => console.error('Error fetching issues:', error));
+    }
+
+    function loadComments(commentsUrl, issueElement) {
+        fetch(commentsUrl)
+            .then(response => response.json())
+            .then(comments => {
+                comments.forEach(comment => {
+                    const commentElement = document.createElement('div');
+                    commentElement.classList.add('comment');
+
+                    const commentBody = document.createElement('div');
+                    commentBody.textContent = comment.body;
+
+                    commentElement.appendChild(commentBody);
+                    issueElement.appendChild(commentElement);
+                });
+            })
+            .catch(error => console.error('Error fetching comments:', error));
+    }
+
+    // Carica le issue al caricamento della pagina
+    loadIssues();
 });
+
 
 
