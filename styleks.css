@@ -116,7 +116,7 @@ header {
 .description {
     font-size: 0.9em;
     color: #ffffff;
-    text-align: center;
+    text-align: right;
 }
 
 @media only screen and (max-width: 768px) {
