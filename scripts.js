@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('issueForm');
     const repoOwner = 'ilgusto';
     const repoName = 'ilgustopizzeriaristorante';
-    const token = 'YOUR_PERSONAL_ACCESS_TOKEN';
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
