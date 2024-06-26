@@ -1,0 +1,24 @@
+name: Create GitHub Issue
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: 'Issue title'
+        required: true
+        type: string
+      body:
+        description: 'Issue body'
+        required: true
+        type: string
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Create Issue
+      run: |
+        curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+        -X POST -d "{\"title\": \"${{ github.event.inputs.title }}\", \"body\": \"${{ github.event.inputs.body }}\"}" \
+        https://api.github.com/repos/${{ github.repository_owner }}/Hello-World/issues
