@@ -104,7 +104,7 @@ header {
 }
 
 .dish p {
-    margin: 0;
+    margin: auto;
     color: #ffffff;
     text-align: left;
 }
