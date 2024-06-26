@@ -149,4 +149,33 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+const token = 'YOUR_PERSONAL_ACCESS_TOKEN';
+const repoOwner = 'ilgusto';  // Sostituisci con il proprietario del repository
+const repoName = 'ilgustopizzeriaristorante';  // Sostituisci con il nome del repository
+
+const title = 'New issue title';
+const body = 'Description of the issue';
+
+fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/issues`, {
+  method: 'POST',
+  headers: {
+    'Authorization': `token ${token}`,
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ title, body })
+})
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Failed to create issue');
+  }
+  return response.json();
+})
+.then(data => {
+  console.log('Issue created successfully:', data);
+})
+.catch(error => {
+  console.error('Error creating issue:', error.message);
+});
+
+
 
