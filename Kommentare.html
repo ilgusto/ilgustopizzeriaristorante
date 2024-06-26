@@ -32,6 +32,17 @@
         .issue-body {
             margin-top: 5px;
         }
+	            .issue-form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .issue-form input, .issue-form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -54,7 +65,11 @@
         <h1>Kommentare</h1>
 		</Div>
 </div>
-    <div id="issues"></div>
+    <form class="issue-form" id="issueForm">
+        <input type="text" id="title" placeholder="Title" required>
+        <textarea id="body" rows="10" placeholder="Body" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
 		
 	 
 	 
