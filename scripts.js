@@ -56,3 +56,39 @@ function createSparks(e) {
         });
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const repoOwner = 'ilgusto';
+    const repoName = 'ilgustopizzeriaristorante';
+    const issuesContainer = document.getElementById('issues');
+
+    fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/issues`)
+        .then(response => response.json())
+        .then(issues => {
+            issues.forEach(issue => {
+                const issueElement = document.createElement('div');
+                issueElement.classList.add('issue');
+
+                const titleElement = document.createElement('div');
+                titleElement.classList.add('issue-title');
+                titleElement.innerHTML = `<a href="${issue.html_url}" target="_blank">${issue.title}</a>`;
+
+                const bodyElement = document.createElement('div');
+                bodyElement.classList.add('issue-body');
+                bodyElement.textContent = issue.body;
+
+                issueElement.appendChild(titleElement);
+                issueElement.appendChild(bodyElement);
+
+                issuesContainer.appendChild(issueElement);
+            });
+        })
+        .catch(error => console.error('Error fetching issues:', error));
+});
+
+const token = 'YOUR_PERSONAL_ACCESS_TOKEN';
+fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/issues`, {
+    headers: {
+        'Authorization': `token ${token}`
+    }
+})
+
