@@ -65,7 +65,21 @@
             border-left: 3px solid #ddd;
             margin-top: 10px;
         }
+
+
+
     </style>
+	    <script>
+        async function createIssue(event) {
+            event.preventDefault();
+
+            const title = document.getElementById('title').value;
+            const body = document.getElementById('body').value;
+
+            // Esegui la logica per inviare i dati a un backend sicuro
+            alert('Form submitted. Issue creation logic should be handled on the server side.');
+        }
+    </script>
 </head>
 <body>
     <header>
