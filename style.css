@@ -474,12 +474,7 @@ nav .menus li a:hover::before {
         .tiktok-link:hover {
             background-color: #5aafba; /* Colore di TikTok scuro al passaggio del mouse */
         }
-/* Basic reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 
 /* Comment Form */
