@@ -5,6 +5,9 @@ body {
     line-height: 1.6;
     background-color: #000;
     color: #dadde3;
+justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 header {
@@ -478,9 +481,7 @@ nav .menus li a:hover::before {
 
 /* Body styling */
 body {
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  
 }
 
 /* Comment Form */
@@ -541,16 +542,7 @@ body {
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
-
-.comment-avatar {
-  margin-right: 20px;
-}
-
-.comment-avatar img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
+
 
 .comment-content {
   flex: 1;
@@ -568,5 +560,5 @@ body {
 }
 
 .comment-text {
-  font-size: 14px;
+  font-size: 16px;
 }
