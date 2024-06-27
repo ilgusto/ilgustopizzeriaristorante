@@ -702,6 +702,9 @@ nav .menus li a:hover::before {
   width: 80%;
   max-width: 600px;
   margin: 0 auto 20px auto; /* Aggiungo margine per centrare */
+  align: center;
+  align-item: center;
+  
 }
 
 .comment-form button {
