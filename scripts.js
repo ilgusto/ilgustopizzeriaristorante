@@ -60,11 +60,16 @@ document.getElementById('submitComment').addEventListener('click', function(even
   event.preventDefault();
 
   const commentText = document.getElementById('commentText').value;
+  const commentAuthor = document.getElementById('commentAuthor').value || 'Anonym';
   if (!commentText) return;
 
+  // Filter for insults (example list, extend as needed)
+  const insults = ['schlecht', 'dumm', 'idiot', 'blöd'];
+  const filteredText = commentText.split(' ').map(word => insults.includes(word.toLowerCase()) ? '***' : word).join(' ');
+
   const comment = {
-    text: commentText,
-    author: 'Anonymous',  // You can add functionality to input author name
+    text: filteredText,
+    author: commentAuthor,
     date: new Date().toLocaleString(),
     avatar: 'https://via.placeholder.com/50'  // Placeholder avatar
   };
@@ -76,6 +81,7 @@ document.getElementById('submitComment').addEventListener('click', function(even
   displayComments();
 
   document.getElementById('commentText').value = '';
+  document.getElementById('commentAuthor').value = '';
 });
 
 function displayComments() {
