@@ -474,23 +474,37 @@ nav .menus li a:hover::before {
         .tiktok-link:hover {
             background-color: #5aafba; /* Colore di TikTok scuro al passaggio del mouse */
         }
-/* Basic styling for form and comments */
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+/* Comment Form */
 .comment-form {
+  background-color: white;
+  padding: 20px;
   margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 .comment-form textarea {
   width: 100%;
   height: 100px;
-  margin-bottom: 10px;
   padding: 10px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  resize: none;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .comment-form button {
@@ -500,41 +514,62 @@ nav .menus li a:hover::before {
   color: white;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .comment-form button:hover {
   background-color: #0056b3;
 }
 
+/* Comment Section */
 .comment-section {
-  border-top: 1px solid #ccc;
-  padding-top: 10px;
-  width: 100%;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 .comment-section h3 {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 20px;
 }
 
 .comment {
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
-  margin-bottom: 10px;
+  display: flex;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
 }
 
-.comment p {
-  margin: 0;
-  font-size: 16px;
+.comment:last-child {
+  border-bottom: none;
+}
+
+.comment-avatar {
+  margin-right: 20px;
+}
+
+.comment-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.comment-content {
+  flex: 1;
 }
 
 .comment-author {
   font-weight: bold;
-  margin-right: 10px;
+  margin-bottom: 5px;
 }
 
 .comment-date {
   font-size: 12px;
   color: #888;
+  margin-bottom: 10px;
+}
+
+.comment-text {
+  font-size: 14px;
 }
