@@ -660,7 +660,7 @@ nav .menus li a:hover::before {
 .page-with-reset * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  
 }
 /* Stili di base */
 .comment-form input[type="text"],
