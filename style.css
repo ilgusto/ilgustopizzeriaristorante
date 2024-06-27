@@ -474,3 +474,37 @@ nav .menus li a:hover::before {
         .tiktok-link:hover {
             background-color: #5aafba; /* Colore di TikTok scuro al passaggio del mouse */
         }
+
+  /* Nascondi il pulsante di iscrizione */
+.disqus-comment-subscribe {
+    display: none !important;
+}
+
+/* Nascondi il logo di Disqus */
+.dsq-brlink {
+    display: none !important;
+}
+
+/* Nascondi la sezione dei commenti correlati */
+.disqus-comment-related {
+    display: none !important;
+}
+
+/* Nascondi la sezione di login */
+.postbox .postbox-header {
+    display: none !important;
+}
+
+/* Nascondi il campo email */
+#disqus_thread input[name="email"] {
+    display: none !important;
+}
+
+/* Nascondi il campo sito web */
+#disqus_thread input[name="url"] {
+    display: none !important;
+}
+
+/* Nascondi le emoji */
+#disqus_thread .ql-picker-options {
+    display: none !important;
