@@ -56,169 +56,41 @@ function createSparks(e) {
         });
     }
 }
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('issueForm');
-    const issuesContainer = document.getElementById('issues');
-    const repoOwner = 'ilgusto';
-    const repoName = 'ilgustopizzeriaristorante';
-    const token = 'YOUR_PERSONAL_ACCESS_TOKEN'; // Usa una soluzione di backend per proteggere il token
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const title = document.getElementById('title').value;
-        const body = document.getElementById('body').value;
-
-        fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/issues`, {
-            method: 'POST',
-            headers: {
-                'Authorization': `token ${token}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                title: title,
-                body: body
-            })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(issue => {
-            alert(`Issue created: ${issue.html_url}`);
-            form.reset();
-            loadIssues(); // Ricarica le issue dopo averne creata una nuova
-        })
-        .catch(error => {
-            console.error('Error creating issue:', error);
-            alert('Error creating issue');
-        });
-    });
-
-    function loadIssues() {
-        fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/issues`)
-            .then(response => response.json())
-            .then(issues => {
-                issuesContainer.innerHTML = '';
-                issues.forEach(issue => {
-                    const issueElement = document.createElement('div');
-                    issueElement.classList.add('issue');
-
-                    const titleElement = document.createElement('div');
-                    titleElement.classList.add('issue-title');
-                    titleElement.innerHTML = `<a href="${issue.html_url}" target="_blank">${issue.title}</a>`;
-
-                    const bodyElement = document.createElement('div');
-                    bodyElement.classList.add('issue-body');
-                    bodyElement.textContent = issue.body;
-
-                    issueElement.appendChild(titleElement);
-                    issueElement.appendChild(bodyElement);
-
-                    // Carica i commenti per ogni issue
-                    loadComments(issue.comments_url, issueElement);
-
-                    issuesContainer.appendChild(issueElement);
-                });
-            })
-            .catch(error => console.error('Error fetching issues:', error));
-    }
-
-    function loadComments(commentsUrl, issueElement) {
-        fetch(commentsUrl)
-            .then(response => response.json())
-            .then(comments => {
-                comments.forEach(comment => {
-                    const commentElement = document.createElement('div');
-                    commentElement.classList.add('comment');
-
-                    const commentBody = document.createElement('div');
-                    commentBody.textContent = comment.body;
-
-                    commentElement.appendChild(commentBody);
-                    issueElement.appendChild(commentElement);
-                });
-            })
-            .catch(error => console.error('Error fetching comments:', error));
-    }
-
-    // Carica le issue al caricamento della pagina
-    loadIssues();
+document.getElementById('commentForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  // Get the comment text
+  const commentText = document.getElementById('commentText').value;
+  if (!commentText) return;
+  
+  // Get existing comments from local storage
+  let comments = JSON.parse(localStorage.getItem('comments')) || [];
+  
+  // Add new comment
+  comments.push(commentText);
+  
+  // Save updated comments to local storage
+  localStorage.setItem('comments', JSON.stringify(comments));
+  
+  // Display comments
+  displayComments();
+  
+  // Clear the textarea
+  document.getElementById('commentText').value = '';
 });
 
+function displayComments() {
+  const comments = JSON.parse(localStorage.getItem('comments')) || [];
+  const commentsDiv = document.getElementById('comments');
+  commentsDiv.innerHTML = '';
+  
+  comments.forEach(comment => {
+    const commentDiv = document.createElement('div');
+    commentDiv.className = 'comment';
+    commentDiv.textContent = comment;
+    commentsDiv.appendChild(commentDiv);
+  });
+}
 
-const token = 'YOUR_PERSONAL_ACCESS_TOKEN';
-const repoOwner = 'ilgusto';  // Sostituisci con il proprietario del repository
-const repoName = 'ilgustopizzeriaristorante';  // Sostituisci con il nome del repository
-
-const title = 'New issue title';
-const body = 'Description of the issue';
-
-fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/issues`, {
-  method: 'POST',
-  headers: {
-    'Authorization': `token ${token}`,
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({ title, body })
-})
-.then(response => {
-  if (!response.ok) {
-    throw new Error('Failed to create issue');
-  }
-  return response.json();
-})
-.then(data => {
-  console.log('Issue created successfully:', data);
-})
-.catch(error => {
-  console.error('Error creating issue:', error.message);
-});
-document.addEventListener("DOMContentLoaded", function () {
-    const commentList = document.getElementById("comment-list");
-    const commentInput = document.getElementById("comment-input");
-    const submitComment = document.getElementById("submit-comment");
-
-    // Carica i commenti salvati
-    loadComments();
-
-    // Aggiungi un nuovo commento
-    submitComment.addEventListener("click", function () {
-        const commentText = commentInput.value.trim();
-        if (commentText) {
-            addComment(commentText);
-            commentInput.value = "";
-        }
-    });
-
-    // Funzione per aggiungere un commento
-    function addComment(text) {
-        const comment = document.createElement("div");
-        comment.className = "comment";
-        comment.textContent = text;
-        commentList.appendChild(comment);
-        saveComment(text);
-    }
-
-    // Funzione per salvare i commenti in localStorage
-    function saveComment(text) {
-        const comments = getComments();
-        comments.push(text);
-        localStorage.setItem("comments", JSON.stringify(comments));
-    }
-
-    // Funzione per caricare i commenti da localStorage
-    function loadComments() {
-        const comments = getComments();
-        comments.forEach(comment => addComment(comment));
-    }
-
-    // Funzione per ottenere i commenti da localStorage
-    function getComments() {
-        return JSON.parse(localStorage.getItem("comments")) || [];
-    }
-});
-
-
+// Initial display of comments
+displayComments();
