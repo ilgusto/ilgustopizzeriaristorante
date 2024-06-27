@@ -19,7 +19,19 @@
 		    <link rel="stylesheet" href="styleks.css">
     <script src="scripts.js" defer></script>
 	<link rel="manifest" href="manifest.json">
-
+   <script>
+// Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAbE692jmqStyex5rFSiIJa4awebDYj1Kg",
+        authDomain: "ilgusto-comments.firebaseapp.com",
+        projectId: "ilgusto-comments",
+        storageBucket: "ilgusto-comments.appspot.com",
+        messagingSenderId: "598152029468",
+        appId: "1:598152029468:web:a1e0eb6de8f0a3172b06d9"
+      };
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+    </script>
 </head>
 <body>
     <header>
@@ -40,18 +52,17 @@
 	<div class="centered-text">
 		<div class="oro">
 
- <!-- Comment Form -->
-<div id="commentForm" class="comment-form">
-  <input type="text" id="commentAuthor" placeholder="Name">
-  <textarea id="commentText" placeholder="Schreib hier!"></textarea>
-  <button type="submit" id="submitComment">Absenden</button>
-</div>
-
-<!-- Comment Section -->
-<div id="commentSection" class="comment-section">
-  <h3>Kommentare</h3>
-  <div id="comments"></div>
-</div>
+                <!-- Comment Form -->
+                <div id="commentForm" class="comment-form">
+                    <input type="text" id="commentAuthor" placeholder="Name">
+                    <textarea id="commentText" placeholder="Schreib hier!"></textarea>
+                    <button type="submit" id="submitComment">Absenden</button>
+                </div>
+                <!-- Comment Section -->
+                <div id="commentSection" class="comment-section">
+                    <h3>Kommentare</h3>
+                    <div id="comments"></div>
+                </div>
 		    
 
 <!-- Div per le scintille -->
