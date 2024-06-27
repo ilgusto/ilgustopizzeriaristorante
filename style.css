@@ -663,7 +663,7 @@ nav .menus li a:hover::before {
 .comment-form input[type="text"],
 .comment-form textarea {
   width: 100%; /* Utilizza la larghezza massima disponibile */
-  max-width: 100%; /* Larghezza massima per adattarsi al contenitore */
+  max-width: 96%; /* Larghezza massima per adattarsi al contenitore */
   padding: 10px; /* Spaziatura interna */
   margin-bottom: 10px; /* Margine inferiore */
   border: 1px solid #ccc; /* Bordo */
