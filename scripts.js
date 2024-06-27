@@ -56,73 +56,40 @@ function createSparks(e) {
         });
     }
 }
-document.getElementById('submitComment').addEventListener('click', function(event) {
-  event.preventDefault();
+document.getElementById('submitComment').addEventListener('click', function() {
+  const author = document.getElementById('commentAuthor').value;
+  const text = document.getElementById('commentText').value;
 
-  const commentText = document.getElementById('commentText').value;
-  const commentAuthor = document.getElementById('commentAuthor').value || 'Anonym';
-  if (!commentText) return;
+  if (author && text) {
+    const commentSection = document.getElementById('comments');
 
-  // Filter for insults (example list, extend as needed)
-  const insults = ['schlecht', 'dumm', 'idiot', 'blöd'];
-  const filteredText = commentText.split(' ').map(word => insults.includes(word.toLowerCase()) ? '***' : word).join(' ');
+    const comment = document.createElement('div');
+    comment.className = 'comment';
 
-  const comment = {
-    text: filteredText,
-    author: commentAuthor,
-    date: new Date().toLocaleString(),
-    avatar: 'https://via.placeholder.com/50'  // Placeholder avatar
-  };
+    const content = document.createElement('div');
+    content.className = 'comment-content';
 
-  let comments = JSON.parse(localStorage.getItem('comments')) || [];
-  comments.push(comment);
-  localStorage.setItem('comments', JSON.stringify(comments));
+    const authorEl = document.createElement('div');
+    authorEl.className = 'comment-author';
+    authorEl.textContent = author;
 
-  displayComments();
+    const dateEl = document.createElement('div');
+    dateEl.className = 'comment-date';
+    dateEl.textContent = new Date().toLocaleString();
 
-  document.getElementById('commentText').value = '';
-  document.getElementById('commentAuthor').value = '';
+    const textEl = document.createElement('div');
+    textEl.className = 'comment-text';
+    textEl.textContent = text;
+
+    content.appendChild(authorEl);
+    content.appendChild(dateEl);
+    content.appendChild(textEl);
+
+    comment.appendChild(content);
+    commentSection.appendChild(comment);
+
+    // Reset form fields
+    document.getElementById('commentAuthor').value = '';
+    document.getElementById('commentText').value = '';
+  }
 });
-
-function displayComments() {
-  const comments = JSON.parse(localStorage.getItem('comments')) || [];
-  const commentsDiv = document.getElementById('comments');
-  commentsDiv.innerHTML = '';
-
-  comments.forEach(comment => {
-    const commentDiv = document.createElement('div');
-    commentDiv.className = 'comment';
-
-    const avatarDiv = document.createElement('div');
-    avatarDiv.className = 'comment-avatar';
-    const avatarImg = document.createElement('img');
-    avatarImg.src = comment.avatar;
-    avatarDiv.appendChild(avatarImg);
-
-    const contentDiv = document.createElement('div');
-    contentDiv.className = 'comment-content';
-
-    const authorDiv = document.createElement('div');
-    authorDiv.className = 'comment-author';
-    authorDiv.textContent = comment.author;
-
-    const dateDiv = document.createElement('div');
-    dateDiv.className = 'comment-date';
-    dateDiv.textContent = comment.date;
-
-    const textDiv = document.createElement('div');
-    textDiv.className = 'comment-text';
-    textDiv.textContent = comment.text;
-
-    contentDiv.appendChild(authorDiv);
-    contentDiv.appendChild(dateDiv);
-    contentDiv.appendChild(textDiv);
-
-    commentDiv.appendChild(avatarDiv);
-    commentDiv.appendChild(contentDiv);
-
-    commentsDiv.appendChild(commentDiv);
-  });
-}
-
-displayComments();
