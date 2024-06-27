@@ -1,9 +1,4 @@
-/* Basic reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 /* Body styling */
 body {
@@ -650,8 +645,19 @@ nav .menus li a:hover::before {
 }
 
 
-/* Basic reset */
-* {
+/* Reset specifico solo dove necessario */
+.reset {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}/* Esempio di utilizzo del reset solo dove serve */
+.page-without-reset .content {
+  /* Stili specifici per la pagina che non richiede il reset completo */
+}
+
+/* Stili per altre pagine che richiedono il reset completo */
+
+.page-with-reset * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
