@@ -18,45 +18,7 @@
     <link rel="stylesheet" href="style.css">
 		    <link rel="stylesheet" href="styleks.css">
     <script src="scripts.js" defer></script>
-	<link rel="manifest" href="manifest.json"><style>
-	  /* Nascondi il pulsante di iscrizione */
-.disqus-comment-subscribe {
-    display: none !important;
-}
-
-/* Nascondi il logo di Disqus */
-.dsq-brlink {
-    display: none !important;
-}
-
-/* Nascondi la sezione dei commenti correlati */
-.disqus-comment-related {
-    display: none !important;
-}
-
-/* Nascondi la sezione di login */
-.postbox .postbox-header {
-    display: none !important;
-}
-
-/* Nascondi il campo email */
-#disqus_thread input[name="email"] {
-    display: none !important;
-}
-
-/* Nascondi il campo sito web */
-#disqus_thread input[name="url"] {
-    display: none !important;
-}
-
-/* Nascondi le emoji */
-#disqus_thread .ql-picker-options {
-    display: none !important;
-}
-	
-
-   
-   </style>
+	<link rel="manifest" href="manifest.json">
 
 </head>
 <body>
@@ -77,37 +39,19 @@
 	    <section class="homeheader">
 	<div class="centered-text">
 		<div class="oro">
-<div id="disqus_thread"></div>
-<section id="disqus_section">
-    <h2>kommentare</h2>
-    <div id="disqus_thread"></div>
-	    <script>
-        /**
-         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-        /*
-        var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        */
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://ilgustopizzeriaritorante.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-	    <>
-</section>
 
+			
+    <!-- Comment Form -->
+<form id="commentForm">
+  <textarea id="commentText" placeholder="Write a comment..."></textarea>
+  <button type="submit">Submit</button>
+</form>
 
-
-    <div class="comment-section">
-        <h2>Kommentare</h2>
-        <div id="comment-list"></div>
-        <textarea id="comment-input" placeholder="Scrivi un commento..."></textarea>
-        <button id="submit-comment">schicken</button>
-    </div>
+<!-- Comment Section -->
+<div id="commentSection">
+  <h3>Comments:</h3>
+  <div id="comments"></div>
+</div>
 		    
 
 <!-- Div per le scintille -->
