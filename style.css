@@ -20,11 +20,8 @@ header {
     color: white;
 }
 
-/* Basic reset */
-* {
-  margin: 0;
-  padding: 0;
-}
+ 
+
 
 
 .header-with-gradient {
@@ -486,13 +483,20 @@ nav .menus li a:hover::before {
         .tiktok-link:hover {
             background-color: #5aafba; /* Colore di TikTok scuro al passaggio del mouse */
         }
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  
+}
 
+/* Body styling */
 
 
 /* Comment Form */
 .comment-form {
   background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px); /* Aumenta il blur */
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -501,6 +505,7 @@ nav .menus li a:hover::before {
   flex-direction: column;
   width: 80%;
   max-width: 600px;
+  margin: 0 auto; /* Centra il modulo dei commenti */
 }
 
 .comment-form input, .comment-form textarea {
@@ -529,12 +534,13 @@ nav .menus li a:hover::before {
 /* Comment Section */
 .comment-section {
   background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px); /* Aumenta il blur */
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   width: 80%;
   max-width: 600px;
+  margin: 0 auto; /* Centra la sezione dei commenti */
 }
 
 .comment-section h3 {
@@ -546,16 +552,11 @@ nav .menus li a:hover::before {
   display: flex;
   margin-bottom: 20px;
   padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
 }
 
 .comment-avatar {
-  margin-right: 20px;
-}
-
-.comment-avatar img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  display: none; /* Nasconde l'immagine del profilo */
 }
 
 .comment-content {
