@@ -176,6 +176,49 @@ fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/issues`, {
 .catch(error => {
   console.error('Error creating issue:', error.message);
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const commentList = document.getElementById("comment-list");
+    const commentInput = document.getElementById("comment-input");
+    const submitComment = document.getElementById("submit-comment");
 
+    // Carica i commenti salvati
+    loadComments();
+
+    // Aggiungi un nuovo commento
+    submitComment.addEventListener("click", function () {
+        const commentText = commentInput.value.trim();
+        if (commentText) {
+            addComment(commentText);
+            commentInput.value = "";
+        }
+    });
+
+    // Funzione per aggiungere un commento
+    function addComment(text) {
+        const comment = document.createElement("div");
+        comment.className = "comment";
+        comment.textContent = text;
+        commentList.appendChild(comment);
+        saveComment(text);
+    }
+
+    // Funzione per salvare i commenti in localStorage
+    function saveComment(text) {
+        const comments = getComments();
+        comments.push(text);
+        localStorage.setItem("comments", JSON.stringify(comments));
+    }
+
+    // Funzione per caricare i commenti da localStorage
+    function loadComments() {
+        const comments = getComments();
+        comments.forEach(comment => addComment(comment));
+    }
+
+    // Funzione per ottenere i commenti da localStorage
+    function getComments() {
+        return JSON.parse(localStorage.getItem("comments")) || [];
+    }
+});
 
 
