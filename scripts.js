@@ -62,12 +62,19 @@ document.getElementById('commentForm').addEventListener('submit', function(event
   // Get the comment text
   const commentText = document.getElementById('commentText').value;
   if (!commentText) return;
+
+  // Create a comment object with text, author, and date
+  const comment = {
+    text: commentText,
+    author: 'Anonymous',
+    date: new Date().toLocaleString()
+  };
   
   // Get existing comments from local storage
   let comments = JSON.parse(localStorage.getItem('comments')) || [];
   
   // Add new comment
-  comments.push(commentText);
+  comments.push(comment);
   
   // Save updated comments to local storage
   localStorage.setItem('comments', JSON.stringify(comments));
@@ -87,7 +94,22 @@ function displayComments() {
   comments.forEach(comment => {
     const commentDiv = document.createElement('div');
     commentDiv.className = 'comment';
-    commentDiv.textContent = comment;
+
+    const authorSpan = document.createElement('span');
+    authorSpan.className = 'comment-author';
+    authorSpan.textContent = comment.author;
+
+    const dateSpan = document.createElement('span');
+    dateSpan.className = 'comment-date';
+    dateSpan.textContent = comment.date;
+
+    const textP = document.createElement('p');
+    textP.textContent = comment.text;
+
+    commentDiv.appendChild(authorSpan);
+    commentDiv.appendChild(dateSpan);
+    commentDiv.appendChild(textP);
+
     commentsDiv.appendChild(commentDiv);
   });
 }
