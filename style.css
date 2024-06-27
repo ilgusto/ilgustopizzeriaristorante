@@ -662,7 +662,33 @@ nav .menus li a:hover::before {
   padding: 0;
   box-sizing: border-box;
 }
+/* Stili di base */
+.comment-form input[type="text"],
+.comment-form textarea {
+  width: 100%; /* Utilizza la larghezza massima disponibile */
+  max-width: 100%; /* Larghezza massima per adattarsi al contenitore */
+  padding: 10px; /* Spaziatura interna */
+  margin-bottom: 10px; /* Margine inferiore */
+  border: 1px solid #ccc; /* Bordo */
+  border-radius: 5px; /* Angoli arrotondati */
+  font-size: 14px; /* Dimensione del carattere */
+}
 
+/* Media query per schermi più piccoli */
+@media screen and (max-width: 768px) {
+  .comment-form input[type="text"],
+  .comment-form textarea {
+    max-width: 100%; /* Massima larghezza per adattarsi al contenitore */
+  }
+}
+
+/* Media query per schermi molto piccoli, come smartphone verticali */
+@media screen and (max-width: 480px) {
+  .comment-form input[type="text"],
+  .comment-form textarea {
+    max-width: 100%; /* Massima larghezza per adattarsi al contenitore */
+  }
+}
 /* Comment Form */
 .comment-form {
   background: rgba(0, 0, 0, 0.7); /* Colore di sfondo nero con opacità 0.7 */
@@ -676,18 +702,6 @@ nav .menus li a:hover::before {
   width: 80%;
   max-width: 600px;
   margin: 0 auto 20px auto; /* Aggiungo margine per centrare */
-}
-
-.comment-form input,
-.comment-form textarea {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-  background-color: rgba(255, 255, 255, 0.1); /* Colore di sfondo leggermente trasparente */
-  color: #fff; /* Testo bianco */
 }
 
 .comment-form button {
