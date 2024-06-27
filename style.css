@@ -476,21 +476,31 @@ nav .menus li a:hover::before {
         }
 
 
+/* Body styling */
+body {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
 /* Comment Form */
 .comment-form {
-  background-color: white;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 600px;
 }
 
-.comment-form textarea {
+.comment-form input, .comment-form textarea {
   width: 100%;
-  height: 100px;
-  padding: 10px;
   margin-bottom: 10px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
@@ -512,10 +522,13 @@ nav .menus li a:hover::before {
 
 /* Comment Section */
 .comment-section {
-  background-color: white;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+  width: 80%;
+  max-width: 600px;
 }
 
 .comment-section h3 {
@@ -527,11 +540,6 @@ nav .menus li a:hover::before {
   display: flex;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
-}
-
-.comment:last-child {
-  border-bottom: none;
 }
 
 .comment-avatar {
