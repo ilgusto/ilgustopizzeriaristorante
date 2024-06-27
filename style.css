@@ -663,11 +663,10 @@ nav .menus li a:hover::before {
   box-sizing: border-box;
 }
 
-
 /* Comment Form */
 .comment-form {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px); /* Aumenta il blur */
+  background: rgba(0, 0, 0, 0.7); /* Colore di sfondo nero con opacità 0.7 */
+  backdrop-filter: blur(10px); /* Effetto blur sullo sfondo */
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -676,16 +675,19 @@ nav .menus li a:hover::before {
   flex-direction: column;
   width: 80%;
   max-width: 600px;
-  margin: 0 auto; /* Centra il modulo dei commenti */
+  margin: 0 auto 20px auto; /* Aggiungo margine per centrare */
 }
 
-.comment-form input, .comment-form textarea {
+.comment-form input,
+.comment-form textarea {
   width: 100%;
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.1); /* Colore di sfondo leggermente trasparente */
+  color: #fff; /* Testo bianco */
 }
 
 .comment-form button {
@@ -723,11 +725,16 @@ nav .menus li a:hover::before {
   display: flex;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #ccc;
 }
 
 .comment-avatar {
-  display: none; /* Nasconde l'immagine del profilo */
+  margin-right: 20px;
+}
+
+.comment-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 .comment-content {
