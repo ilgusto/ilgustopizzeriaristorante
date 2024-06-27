@@ -649,7 +649,7 @@ nav .menus li a:hover::before {
 .reset {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+ 
 }/* Esempio di utilizzo del reset solo dove serve */
 .page-without-reset .content {
   /* Stili specifici per la pagina che non richiede il reset completo */
