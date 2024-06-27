@@ -56,33 +56,25 @@ function createSparks(e) {
         });
     }
 }
-document.getElementById('commentForm').addEventListener('submit', function(event) {
+document.getElementById('submitComment').addEventListener('click', function(event) {
   event.preventDefault();
-  
-  // Get the comment text
+
   const commentText = document.getElementById('commentText').value;
   if (!commentText) return;
 
-  // Create a comment object with text, author, and date
   const comment = {
     text: commentText,
-    author: 'Anonymous',
-    date: new Date().toLocaleString()
+    author: 'Anonymous',  // You can add functionality to input author name
+    date: new Date().toLocaleString(),
+    avatar: 'https://via.placeholder.com/50'  // Placeholder avatar
   };
-  
-  // Get existing comments from local storage
+
   let comments = JSON.parse(localStorage.getItem('comments')) || [];
-  
-  // Add new comment
   comments.push(comment);
-  
-  // Save updated comments to local storage
   localStorage.setItem('comments', JSON.stringify(comments));
-  
-  // Display comments
+
   displayComments();
-  
-  // Clear the textarea
+
   document.getElementById('commentText').value = '';
 });
 
@@ -90,29 +82,41 @@ function displayComments() {
   const comments = JSON.parse(localStorage.getItem('comments')) || [];
   const commentsDiv = document.getElementById('comments');
   commentsDiv.innerHTML = '';
-  
+
   comments.forEach(comment => {
     const commentDiv = document.createElement('div');
     commentDiv.className = 'comment';
 
-    const authorSpan = document.createElement('span');
-    authorSpan.className = 'comment-author';
-    authorSpan.textContent = comment.author;
+    const avatarDiv = document.createElement('div');
+    avatarDiv.className = 'comment-avatar';
+    const avatarImg = document.createElement('img');
+    avatarImg.src = comment.avatar;
+    avatarDiv.appendChild(avatarImg);
 
-    const dateSpan = document.createElement('span');
-    dateSpan.className = 'comment-date';
-    dateSpan.textContent = comment.date;
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'comment-content';
 
-    const textP = document.createElement('p');
-    textP.textContent = comment.text;
+    const authorDiv = document.createElement('div');
+    authorDiv.className = 'comment-author';
+    authorDiv.textContent = comment.author;
 
-    commentDiv.appendChild(authorSpan);
-    commentDiv.appendChild(dateSpan);
-    commentDiv.appendChild(textP);
+    const dateDiv = document.createElement('div');
+    dateDiv.className = 'comment-date';
+    dateDiv.textContent = comment.date;
+
+    const textDiv = document.createElement('div');
+    textDiv.className = 'comment-text';
+    textDiv.textContent = comment.text;
+
+    contentDiv.appendChild(authorDiv);
+    contentDiv.appendChild(dateDiv);
+    contentDiv.appendChild(textDiv);
+
+    commentDiv.appendChild(avatarDiv);
+    commentDiv.appendChild(contentDiv);
 
     commentsDiv.appendChild(commentDiv);
   });
 }
 
-// Initial display of comments
 displayComments();
