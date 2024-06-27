@@ -115,8 +115,7 @@ function displayComments() {
     contentDiv.appendChild(authorDiv);
     contentDiv.appendChild(dateDiv);
     contentDiv.appendChild(textDiv);
-
-    commentDiv.appendChild(avatarDiv);
+
     commentDiv.appendChild(contentDiv);
 
     commentsDiv.appendChild(commentDiv);
