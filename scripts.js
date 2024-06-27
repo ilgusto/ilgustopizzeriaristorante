@@ -71,7 +71,7 @@ document.getElementById('submitComment').addEventListener('click', function(even
     text: filteredText,
     author: commentAuthor,
     date: new Date().toLocaleString(),
-     'https://via.placeholder.com/50'  // 
+    avatar: 'https://via.placeholder.com/50'  // Placeholder avatar
   };
 
   let comments = JSON.parse(localStorage.getItem('comments')) || [];
@@ -93,9 +93,11 @@ function displayComments() {
     const commentDiv = document.createElement('div');
     commentDiv.className = 'comment';
 
-    
-    
-    
+    const avatarDiv = document.createElement('div');
+    avatarDiv.className = 'comment-avatar';
+    const avatarImg = document.createElement('img');
+    avatarImg.src = comment.avatar;
+    avatarDiv.appendChild(avatarImg);
 
     const contentDiv = document.createElement('div');
     contentDiv.className = 'comment-content';
@@ -115,7 +117,8 @@ function displayComments() {
     contentDiv.appendChild(authorDiv);
     contentDiv.appendChild(dateDiv);
     contentDiv.appendChild(textDiv);
-
+
+    commentDiv.appendChild(avatarDiv);
     commentDiv.appendChild(contentDiv);
 
     commentsDiv.appendChild(commentDiv);
