@@ -481,12 +481,6 @@ nav .menus li a:hover::before {
   box-sizing: border-box;
 }
 
-/* Body styling */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  padding: 20px;
-}
 
 /* Comment Form */
 .comment-form {
