@@ -704,19 +704,19 @@ nav .menus li a:hover::before {
 
 /* Comment Section */
 .comment-section {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px); /* Aumenta il blur */
+  background: rgba(0, 0, 0, 0.7); /* Colore di sfondo nero con opacità 0.7 */
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   width: 80%;
   max-width: 600px;
-  margin: 0 auto; /* Centra la sezione dei commenti */
+  margin: 20px auto; /* Aggiungo margine per centrare */
 }
 
 .comment-section h3 {
   margin-bottom: 20px;
   font-size: 20px;
+  color: #fff; /* Testo bianco */
 }
 
 .comment {
@@ -737,6 +737,7 @@ nav .menus li a:hover::before {
 .comment-author {
   font-weight: bold;
   margin-bottom: 5px;
+  color: #fff; /* Testo bianco */
 }
 
 .comment-date {
@@ -747,4 +748,5 @@ nav .menus li a:hover::before {
 
 .comment-text {
   font-size: 14px;
+  color: #fff; /* Testo bianco */
 }
