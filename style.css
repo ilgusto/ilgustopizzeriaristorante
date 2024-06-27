@@ -14,10 +14,8 @@ body {
   background-color: #000;
   color: #dadde3;
   padding: 20px;
-  display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 
 header {
@@ -649,4 +647,98 @@ nav .menus li a:hover::before {
 
 .contact-info a:hover {
   text-decoration: underline;
+}
+
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Comment Form */
+.comment-form {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px); /* Aumenta il blur */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto; /* Centra il modulo dei commenti */
+}
+
+.comment-form input, .comment-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.comment-form button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.comment-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Comment Section */
+.comment-section {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px); /* Aumenta il blur */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto; /* Centra la sezione dei commenti */
+}
+
+.comment-section h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.comment {
+  display: flex;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.comment-avatar {
+  display: none; /* Nasconde l'immagine del profilo */
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-author {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.comment-date {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.comment-text {
+  font-size: 14px;
 }
