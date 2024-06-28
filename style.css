@@ -772,3 +772,68 @@ nav .menus li a:hover::before {
   color: #fff; /* Testo bianco */
 }
 
+.facebook-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #3b5998;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+    .facebook-link:hover {
+        background-color: #2d4373;
+    }
+	
+	        .instagram-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #833ab4; /* Colore di Instagram */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+    .instagram-link:hover {
+        background-color: #6e27c5; /* Colore di Instagram scuro al passaggio del mouse */
+    }
+	
+	        .youtube-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ff0000; /* Colore di YouTube */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+    .youtube-link:hover {
+        background-color: #cc0000; /* Colore di YouTube scuro al passaggio del mouse */
+    }
+	        .custom-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #000; /* Colore di sfondo del link */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+    .custom-link:hover {
+        background-color: #000; /* Colore di sfondo del link al passaggio del mouse */
+    }
+	
+
+    .tiktok-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #69c9d0; /* Colore di TikTok */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+   
+		 }
+    .tiktok-link:hover {
+        background-color: #5aafba; /* Colore di TikTok scuro al passaggio del mouse */
+    }
