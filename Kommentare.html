@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleks.css">
+	
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
     <!-- Add Firebase products that you want to use -->
@@ -23,11 +24,15 @@
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <header>
-        <div class="centered-text">
-            <p><img class="flex" src="logs.png" alt="Logo" draggable="false"></p>
-        </div>
-        <nav>
+     <header>
+    <div class="header-container">
+        <img class="logo" src="logo2.png" alt="Logo" draggable="false">
+        <button class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="nav-menu" id="nav-menu">
             <ol class="menus">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Speisekarte.html">Speisekarte</a></li>
@@ -35,7 +40,8 @@
                 <li><a href="Kommentare.html">Kommentare</a></li>
             </ol>
         </nav>
-    </header>
+    </div>
+</header>
 
 	    <section class="homeheader">
 	<div class="centered-text">
