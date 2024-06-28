@@ -1,839 +1,376 @@
-body {
-  margin: 0;
-  font-family: 'Poetsen One', sans-serif;
-  font-weight: 400;
-  line-height: 1.6;
-  background-color: #000;
-  color: #dadde3;
-  padding: 0px;
-  justify-content: center;
-  align-items: center;
-}
-
-header {
-  background-color: #000;
-  padding: 20px 0;
-  text-align: center;
-  position: relative;
-  color: white;
-}
-
-.header-with-gradient {
-  background: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0.5));
-  padding: 20px 0;
-  text-align: center;
-  position: relative;
-  color: white;
-}
-
-.poetsen-one-regular {
-  font-family: "Poetsen One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-nav {
-  text-align: center;
-  padding: 30px 0;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-nav .menus {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav .menus li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-nav .menus li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.5em;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-
-nav .menus li a::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #CDA434;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease;
-  z-index: -1;
-}
-
-nav .menus li a:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.homeheader {
-  padding: 10% 0;
-  text-align: center;
-  background-image: url('roma.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
-.animated-title {
-  animation: gradient 5s infinite;
-  background: linear-gradient(45deg, white);
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.photo-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.photo-gallery .flex {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-}
-
-.photo-gallery img {
-  border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.5s ease;
-}
-
-.photo-gallery img:hover {
-  transform: scale(1.05);
-}
-
-.cards {
-  background-color: #CDA434;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.cards h2 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
-
-.cards p {
-  font-size: 1.2em;
-}
-
-@media screen and (max-width: 768px) {
-  .logo {
-    font-size: 2em;
-  }
-
-  nav .menus li a {
-    font-size: 1.2em;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .logo {
-    font-size: 1.8em;
-  }
-
-  nav .menus li a {
-    font-size: 1em;
-  }
-
-  .photo .flex {
-    width: 100%;
-  }
-}
-
-.sectionA-divider {
-  background: url('sfumatura.png') repeat-y center center;
-  margin: 20px 0;
-  height: 20px;
-}
-
-.sectionA-bubbles::after {
-  content: '';
-  display: block;
-  position: relative;
-  bottom: -10px;
-  width: 100%;
-  height: 30px;
-  background: radial-gradient(circle at 10% 10%, #f2f2f2 10%, transparent 10%),
-              radial-gradient(circle at 90% 10%, #f2f2f2 10%, transparent 10%),
-              radial-gradient(circle at 50% 50%, #f2f2f2 10%, transparent 10%);
-  background-size: 20px 20px;
-  background-position: center;
-  background-repeat: repeat-x;
-}
-
-#spark-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1000;
-}
-
-.spark {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: spark-animation 700ms ease-out forwards;
-}
-
-@keyframes spark-animation {
-  to {
-    transform: translate3d(var(--x), var(--y), 0) scale(0);
-    opacity: 0;
-  }
-}
-
-.parallax {
-  background-image: url('background.jpg');
-  height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.labelbars, .labelbarsss {
-  position: relative;
-  overflow: hidden;
-  padding: 80px 20px;
-  text-align: center;
-  background: linear-gradient(to right, #008f39, #008f39); /* green */
-  color: white;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  background-image: url('roma.jpg'); /* Aggiungi l'immagine di sfondo */
-  background-size: cover; /* Ridimensiona l'immagine per coprire l'intera area */
-  background-position: center; /* Centra l'immagine */
-  background-repeat: no-repeat; /* Non ripete l'immagine */
-}
-
-.labelbars::before, .labelbarsss::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-  background-size: 50px 50px;
-  pointer-events: none;
-  animation: animateBackground 10s linear infinite;
-}
-
-@keyframes animateBackground {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(-50px, -50px);
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .labelbarss {
-    padding: 60px 15px; /* Riduci il padding su schermi più piccoli */
-    background-size: 80%; /* Riduce ulteriormente la dimensione dell'immagine su schermi più piccoli */
-  }
-}
-
-.centered-text {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.flex {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.contact-info {
-  font-size: 18px;
-  line-height: 1.4;
-  color: #fff;
-}
-
-.contact-info a {
-  color: #CDA434;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-@media only screen and (max-width: 768px) {
-  .menus {
-    text-align: center;
-  }
-
-  .menus li {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  .menus li a {
-    display: block;
-    padding: 10px;
-  }
-
-  .menu {
-    padding: 10px;
-  }
-
-  .section {
-    padding: 10px;
-  }
-
-  .section h2 {
-    font-size: 1.2em;
-  }
-
-  .dish {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .dish p {
-    text-align: left;
-  }
-}
-
-.oro h1 {
-  text-align: center;
-  color: #CDA434;
-  margin-bottom: 50px;
-}
-
-.header-with-gradient {
-  background: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0.5));
-  padding: 20px 0;
-  text-align: center;
-  position: relative;
-  color: white;
-}
-
-.animated-title {
-  font-size: 3em;
-  animation: gradient 5s infinite;
-  background: linear-gradient(45deg, white, #CDA434);
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.section {
-  padding: 50px 20px;
-  text-align: center;
-  color: #dadde3;
-}
-
-.section h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #CDA434;
-}
-
-.section p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-.section img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 20px;
-}
-
-.dish {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.dish p {
-  font-size: 1.2em;
-  margin: 20px 0;
-}
-
-.footer {
-  background-color: #000;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-}
-
-.footer p {
-  margin: 10px 0;
-}
-
-.footer a {
-  color: #CDA434;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-/* Additional Media Queries */
-@media only screen and (max-width: 1024px) {
-  .header-with-gradient {
-    padding: 15px 0;
-  }
-
-  .section {
-    padding: 40px 15px;
-  }
-
-  .section h2 {
-    font-size: 2em;
-  }
-
-  .section p {
-    font-size: 1.1em;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .header-with-gradient {
-    padding: 10px 0;
-  }
-
-  .section {
-    padding: 30px 10px;
-  }
-
-  .section h2 {
-    font-size: 1.8em;
-  }
-
-  .section p {
-    font-size: 1em;
-  }
-}
-
-.centered-text {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.flex {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.contact-info {
-  font-size: 18px;
-  line-height: 1.4;
-  color: #fff;
-}
-
-.contact-info a {
-  color: #CDA434;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-/* Unique section classes */
-.oro h1 {
-  text-align: center;
-  color: #CDA434;
-  margin-bottom: 50px;
-}
-
-.header-with-gradient {
-  background: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0.5));
-  padding: 20px 0;
-  text-align: center;
-  position: relative;
-  color: white;
-}
-
-.animated-title {
-  font-size: 3em;
-  animation: gradient 5s infinite;
-  background: linear-gradient(45deg, white, #CDA434);
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.section {
-  padding: 50px 20px;
-  text-align: center;
-  color: #dadde3;
-}
-
-.section h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #CDA434;
-}
-
-.section p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-.section img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 20px;
-}
-
-.dish {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.dish p {
-  font-size: 1.2em;
-  margin: 20px 0;
-}
-
-.footer {
-  background-color: #000;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-}
-
-.footer p {
-  margin: 10px 0;
-}
-
-.footer a {
-  color: #CDA434;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-@media only screen and (max-width: 1024px) {
-  .header-with-gradient {
-    padding: 15px 0;
-  }
-
-  .section {
-    padding: 40px 15px;
-  }
-
-  .section h2 {
-    font-size: 2em;
-  }
-
-  .section p {
-    font-size: 1.1em;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .header-with-gradient {
-    padding: 10px 0;
-  }
-
-  .section {
-    padding: 30px 10px;
-  }
-
-  .section h2 {
-    font-size: 1.8em;
-  }
-
-  .section p {
-    font-size: 1em;
-  }
-}
-
-.centered-text {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.flex {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.contact-info {
-  font-size: 18px;
-  line-height: 1.4;
-  color: #fff;
-}
-
-.contact-info a {
-  color: #CDA434;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-
-/* Reset specifico solo dove necessario */
-.reset {
-  margin: 0;
-  padding: 0;
- 
-}/* Esempio di utilizzo del reset solo dove serve */
-.page-without-reset .content {
-  /* Stili specifici per la pagina che non richiede il reset completo */
-}
-
-/* Stili per altre pagine che richiedono il reset completo */
-
-.page-with-reset * {
-  margin: 0;
-  padding: 0;
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ilgusto</title>
+    <meta name="author" content="DevincenziUndMaggiolo">
+    <meta name="description" content="ilgusto restaurant bei: Zum Sportpark 1, 90602 Pyrbaum">
+    <meta name="keywords" content="ilgusto">
+    <link rel="icon" sizes="192x192" href="logo2.png">
+    <link rel="icon" sizes="512x512" href="logo2.png">
+    <link rel="icon" href="logo2.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleks.css">
+    <script src="scripts.js" defer></script>
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+   <header>
+    <div class="header-container">
+        <img class="logo" src="logo2.png" alt="Logo" draggable="false">
+        <button class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="nav-menu" id="nav-menu">
+            <ol class="menus">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Speisekarte.html">Speisekarte</a></li>
+                <li><a href="Kontakte.html">Kontakte</a></li>
+                <li><a href="Kommentare.html">Kommentare</a></li>
+            </ol>
+        </nav>
+    </div>
+</header>
+
+
+<body>
+<title>Speisekarte</title>
+</head>
+<body>
+    <section class="homeheader">
+
+  <div class="oro">
+   <h1>Speisekarte</h1>
+  </div>
   
-}
-/* Stili di base */
-.comment-form input[type="text"],
-.comment-form textarea {
-  width: 100%; /* Utilizza la larghezza massima disponibile */
-  max-width: 96%; /* Larghezza massima per adattarsi al contenitore */
-  padding: 10px; /* Spaziatura interna */
-  margin-bottom: 10px; /* Margine inferiore */
-  border: 1px solid #ccc; /* Bordo */
-  border-radius: 5px; /* Angoli arrotondati */
-  font-size: 14px; /* Dimensione del carattere */
-}
+  <div class="menu">
+        <div class="section">
+            <h2>Vorspeisen</h2>
+            <div class="dish">
+                <p>Bruschetta <span class="price">7,50&euro;</span></p>
+                <p class="description">(6 st&uuml;ck brot mit tomaten, Knoblauch und Basilikum)</p>
+            </div>
+            <div class="dish">
+                <p>Carpaccio <span class="price">9,50&euro;</span></p>
+                <p class="description">(Rindfleisch, Rucola, Zitronen-Parmesan-Flocken und Kirschtomaten)</p>
+            </div>
+            <div class="dish">
+                <p>Caprese <span class="price">7,50&euro;</span></p>
+                <p class="description">(Mozzarella und tomaten)</p>
+            </div>
+            <div class="dish">
+                <p>Antipasto della casa <span class="price">15,00&euro;</span></p>
+                <p class="description">(Mischung aus verschidene italienisch schinken und salami, Gem&uuml;se und K&auml;se)</p>
+            </div>
+        </div>
 
-/* Media query per schermi più piccoli */
-@media screen and (max-width: 768px) {
-  .comment-form input[type="text"],
-  .comment-form textarea {
-    max-width: 100%; /* Massima larghezza per adattarsi al contenitore */
-  }
-}
+        <div class="section">
+            <h2>Pasta <p class="descriptions">(nudeln nach wahl: penne oder spaghetti)</p></h2>
 
-/* Media query per schermi molto piccoli, come smartphone verticali */
-@media screen and (max-width: 480px) {
-  .comment-form input[type="text"],
-  .comment-form textarea {
-    max-width: 100%; /* Massima larghezza per adattarsi al contenitore */
-  }
-}
-/* Comment Form */
-.comment-form {
-  background: rgba(0, 0, 0, 0.7); /* Colore di sfondo nero con opacità 0.7 */
-  backdrop-filter: blur(10px); /* Effetto blur sullo sfondo */
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  max-width: 600px;
-  margin: 0 auto 20px auto; /* Aggiungo margine per centrare */
-  align: center;
-  align-item: center;
-  
-}
+            <div class="dish">
+                <p>Aglio olio piccante  <span class="price">8,00&euro;</span></p>
+                <p class="description">(knoblauch, scharf &ouml;l)</p>
+            </div>
+            <div class="dish">
+                <p>Carbonara <span class="price">11,00&euro;</span></p>
+                <p class="description">(Guanciale, Sahne, Eier, Parmesan)</p>
+            </div>
+            <div class="dish">
+                <p>arrabbiata <span class="price">8,80&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, knoblauch, scharf, zwiebel)</p>
+            </div>
+            <div class="dish">
+                <p>amatriciana <span class="price">11,00&euro;</span></p>
+                <p class="description">(guanciale, Tomatenso&szlig;e, Zwiebel-Knoblauch, Wei&szlig;wein)</p>
+            </div>
+            <div class="dish">
+                <p>ortolana <span class="price">10,50&euro;</span></p>
+                <p class="description">(Gemuse-mix, etwas tomatenso&szlig;e)</p>
+            </div>
+            <div class="dish">
+                <p>frutti di mare <span class="price">12,50&euro;</span></p>
+                <p class="description">(meeresfr&uuml;chte,knoblauch, wei&szlig;wein,Kirschtomaten,tomatenso&szlig;e)</p>
+            </div>
+            <div class="dish">
+                <p>Salmone <span class="price">12,00&euro;</span></p>
+                <p class="description">(Knoblauch, Kirschtomaten, Sahne, Zucchini, Lachs)</p>
+            </div>
+            <div class="dish">
+                <p>Vongole <span class="price">11,00&euro;</span></p>
+                <p class="description">(Venusmuscheln, Knoblauch, kirschtomaten, Wei&szlig;wein)</p>
+            </div>
+		<div class="dish">
+                <p>Tartufo e Parmiggiano <span class="price">13,80&euro;</span></p>
+                <p class="description">(Tr&uuml;ffelcreme und Parmesan)</p>
+            </div>
+		<div class="dish">
+                <p>Puttanesca <span class="price">13,50&euro;</span></p>
+                <p class="description">(Tomaten, Sardinen, Knoblauch, Kapern, Oliven)</p>
+            </div>  
+            <div class="dish">
+                <p>Bolognese <span class="price">10,00&euro;</span></p>
+                <p class="description">(Tomate-Fleischso&szlig;e (Gemischtes Hackfleisch))</p>
+            </div>
+            <div class="dish">
+                <p>Napoli <span class="price">8,00&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e)</p>
+            </div>
 
-.comment-form button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-}
+        </div>
 
-.comment-form button:hover {
-  background-color: #0056b3;
-}
+        <div class="section">
+            <h2>Al forno-Gebackene</h2>
+            <div class="dish">
+                <p>Lasagne <span class="price">9,50&euro;</span></p>
+                <p class="description">(bolognese, Mozzarella, B&eacute;chamelso&szlig;e)</p>
+            </div>
+            <div class="dish">
+                <p>Cannelloni mit Fleisch <span class="price">10,00&euro;</span></p>
+                <p class="description">(Hackfleisch, mozzarella)</p>
+            </div>
+            <div class="dish">
+                <p>Cannelloni mit Ricotta und Spinat <span class="price">10,00&euro;</span></p>
+                <p class="description">(Tomatenso&szlig;e, ricotta und spinat)</p>
+            </div>
+        </div>
 
-/* Comment Section */
-.comment-section {
-  background: rgba(0, 0, 0, 0.7); /* Colore di sfondo nero con opacità 0.7 */
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  width: 80%;
-  max-width: 600px;
-  margin: 20px auto; /* Aggiungo margine per centrare */
-}
+        <div class="section">
+            <h2>Carne - Fleisch <p class="descriptions">(mit pommes) (Beilagen oder insalat oder pizzabrot)</p></h2>
 
-.comment-section h3 {
-  margin-bottom: 20px;
-  font-size: 20px;
-  color: #fff; /* Testo bianco */
-}
+            <div class="dish">
+                <p>Scaloppina mit Champignons und Pommes frites <span class="price">15,00&euro;</span></p>
+                <p class="description">(Schweinemedallions mit Champignons, Butter)</p>
+            </div>
+            <div class="dish">
+                <p>Scaloppina Zitrone mit Pommes frites <span class="price">14,00&euro;</span></p>
+                <p class="description">(Schweinemedallions mit Zitrone, Butter)</p>
+            </div>
+            <div class="dish">
+                <p>Scaloppina Gorgonzola mit Pommes frites <span class="price">16,00&euro;</span></p>
+                <p class="description">(Schweinemedallions mit Gorgonzola, Butter)</p>
+            </div>
+            <div class="dish">
+                <p>Saltimbocca alla romana mit Pommes frites <span class="price">17,50&euro;</span></p>
+                <p class="description">(Schweinemedallions mit luftgetrocknetem Schinken und Salbei)</p>
+            </div>
+            <div class="dish">
+                <p>Scaloppina al Vino Bianco mit Pommes frites <span class="price">14,00&euro;</span></p>
+                <p class="description">(Schweinemedallion in Wei&szlig;weinso&szlig;e)</p>
+            </div>
+            <div class="dish">
+                <p>cotoletta di maiale impanata mit Pommes frites <span class="price">10,50&euro;</span></p>
+                <p class="description">(Paniertes Schweineschnitzel)</p>
+            </div>
+        </div>
 
-.comment {
-  display: flex;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-}
+        <div class="section">
+            <h2>Pesce <p class="descriptions">(beilagen Rosmarin-Kartoffeln und gem&uuml;se)</p></h2>
+            
+            <div class="dish">
+                <p>Misto fritto <span class="price">23,50&euro;</span></p>
+                <p class="description">(Frittierte Calamari und Frittierte riesengarnelen)</p>
+            </div>
+            <div class="dish">
+                <p>Grigliata mista <span class="price">28,00&euro;</span></p>
+                <p class="description">(Gegrillt Lachs, zwei Gegrillt riesengarnelen, Gegrillt Doradenfilet)</p>
+            </div>
+            <div class="dish">
+                <p>Salmone alla griglia <span class="price">16,00&euro;</span></p>
+                <p class="description">(Gegrillt Lachs)</p>
+            </div>
+            <div class="dish">
+                <p>Gamberoni alla griglia <span class="price">20,00&euro;</span></p>
+                <p class="description">(5 Gegrillt riesengarnelen)</p>
+            </div>
+        </div>
 
-.comment-avatar {
-  margin-right: 20px;
-}
+        <div class="section">
+            <h2>Insalate - Salate <p class="descriptions">(Dressing &ouml;l oder Joghurt)</p></h2>
+            
+            <div class="dish">
+                <p>Mista <span class="price">6,50&euro;</span></p>
+                <p class="description">(gemischte insalat, Tomaten, Gurken, Karotten, Zwiebeln)</p>
+            </div>
+            <div class="dish">
+                <p>Italia <span class="price">8,50&euro;</span></p>
+                <p class="description">(Italienischer Insalat, Tomaten, Gurken, Karotten, Eier, K&auml;se, Schinken)</p>
+            </div>
+            <div class="dish">
+                <p>Bosco <span class="price">10,00&euro;</span></p>
+                <p class="description">(insalat, Kirschtomaten, Waln&uuml;sse, Haseln&uuml;sse, Apfelessig, Feta-K&auml;se)</p>
+            </div>
+            <div class="dish">
+                <p>Luna <span class="price">10,00&euro;</span></p>
+                <p class="description">(insalat, Rucola, Birnen, Parmesan, Waln&uuml;sse)</p>
+            </div>
+            <div class="dish">
+                <p>Verde <span class="price">4,50&euro;</span></p>
+                <p class="description">(insalat, gurken mit dressing)</p>
+            </div>
+        </div>
 
-.comment-avatar img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
+        <div class="section">
+            <h2>Pizze</h2>
+            <div class="dish">
+                <p>Pizzabrot <span class="price">4,00&euro;</span></p>
+            </div>
+            <div class="dish">
+                <p>Marinara <span class="price">8,50&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, Sardellen, Knoblauch)</p>
+            </div>
+            <div class="dish">
+                <p>Margherita <span class="price">9,00&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, Fior di latte)</p>
+            </div>
+            <div class="dish">
+                <p>Prosciutto <span class="price">9,50&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, Schinken)</p>
+            </div>
+            <div class="dish">
+                <p>Salami <span class="price">9,50&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, salami)</p>
+            </div>
+            <div class="dish">
+                <p>funghi <span class="price">9,50&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, Champignons)</p>
+            </div>
+            <div class="dish">
+                <p>Prosciutto e funghi <span class="price">10,00&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, Champignons, Schinken)</p>
+            </div>
+            <div class="dish">
+                <p>Capricciosa <span class="price">10,00&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, Champignons, Artischocken, Sardellen)</p>
+            </div>
+            <div class="dish">
+                <p>4 formaggi <span class="price">10,00&euro;</span></p>
+                <p class="description">(Fior di latte, Gorgonzola, brie, parmesan, Sahne)</p>
+            </div>
+            <div class="dish">
+                <p>4 stagioni <span class="price">10,00&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, Oliven, Schinken, Salami, Champignons, Artischocken)</p>
+            </div>
+            <div class="dish">
+                <p>Diavola <span class="price">10,50&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, Spianata, Champignons, Scharf &ouml;l)</p>
+            </div>
+            <div class="dish">
+                <p>Speciale <span class="price">11,00&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, Salami, schinken, Champignons, Paprika, Zwiebeln, Knoblauch)</p>
+            </div>
+            <div class="dish">
+                <p>Spinaci <span class="price">10,50&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, Gorgonzola, Knoblauch, Schinken, Blattspinat)</p>
+            </div>
+            <div class="dish">
+                <p>hawaii <span class="price">9,50&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, Prosciutto, Ananas)</p>
+            </div>
+            <div class="dish">
+                <p>vegetariana <span class="price">10,00&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, Champignons, Auberginen, Zucchini, Paprika)</p>
+            </div>
+            <div class="dish">
+                <p>Tonno e Cipolla <span class="price">10,00&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, zwiebel,thunfisch)</p>
+            </div>
+            <div class="dish">
+                <p>Frutti Di Mare <span class="price">12,50&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, Meeresfr&uuml;chte, Knoblauch)</p>
+            </div>
+            <div class="dish">
+                <p>Calabria <span class="price">12,50&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, Fior di Latte, Nduja, Spianata, Zwiebeln, Parmesan, sehr scharf, Basilikum)</p>
+            </div>
+            <div class="dish">
+                <p>tartufo <span class="price">13,00&euro;</span></p>
+                <p class="description">(Tr&uuml;ffelcreme, Fior di Latte, Champignons)</p>
+            </div>
+            <div class="dish">
+                <p>Einstein <span class="price">11,00&euro;</span></p>
+                <p class="description">(1/3 hawaii, 1/3 Diavola, 1/3 Philadelphia)</p>
+            </div>
+            <div class="dish">
+                <p>Crudaiola <span class="price">11,50&euro;</span></p>
+                <p class="description">((Alles frisch und ohne Tomatenso&szlig;e) KirschTomaten, Fior di Latte, Parmaschinken, Parmesann, Rucola, Basilikum)</p>
+            </div>
+            <div class="dish">
+                <p>Falcone e borsellino <span class="price">11,50&euro;</span></p>
+                <p class="description">(Tomatenso&szlig;e, Fior di Latte, Spianata, Salsiccia, Basilikum)</p>
+            </div>
+            <div class="dish">
+                <p>Americana <span class="price">11,00&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, Fior di Latte, Pommes frites, W&uuml;rstel, Basilikum)</p>
+            </div>
+            <div class="dish">
+                <p>Gaetano <span class="price">11,50&euro;</span></p>
+                <p class="description">(Tomatenso&szlig;e, Fior di Latte, Salami, Speck, Champignons, Paprika, Oregano, Basilikum)</p>
+            </div>
+            <div class="dish">
+                <p>Panna und Speck <span class="price">11,00&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, Fior di latte, Speck und Sahne)</p>
+            </div>
+            <div class="dish">
+                <p>Bufalina <span class="price">13,00&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, Parmesan, Basilikum, (nach dem Backen mit frischer Buffelmozzarella belegt))</p>
+            </div>
+            <div class="dish">
+                <p>Ape <span class="price">13,50&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, Spianata, Gorgonzola, Oliven, Honig scharf, Basilikum)</p>
+            </div>
+            <div class="dish">
+                <p>Burratina <span class="price">14,50&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, fior di latte, Parmesan in scheiben,
+				rucola, Kirschtomaten, Oregano, Basilikum)</p>
+            </div>
+            <div class="dish">
+                <p>Levi montalcino <span class="price">15,30&euro;</span></p>
+                <p class="description">(sauerrahm frischer lachs kaviar garnelen)</p>
+            </div>
+            <div class="dish">
+                <p>Dante <span class="price">14,00&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, Fior di latte, spinat, lachs, schrims, knoblauch)</p>
+            </div>
+            <div class="dish">
+                <p>Gandhi <span class="price">14,00&euro;</span></p>
+                <p class="description">(tomatenso&szlig;e, Fior di latte, Sahne Mozzarella-Birnen und N&uuml;sse)</p>
+            </div>
+            <div class="dish">
+                <p>Pistacchio <span class="price">15,50&euro;</span></p>
+                <p class="description">(Pistaziencreme, Fior di Latte, Basilikum (nach dem Backen mit Mortadella und Pistazienkerne belegt))</p>
+            </div>
+            <div class="dish">
+                <p>Napoli <span class="price">14,00&euro;</span></p>
+                <p class="description">(Ohne Tomatenso&szlig;e, Fior di Latte, St&auml;ngelkohl-neapolitanisch (Friarielli), italienische Salsiccia, scharf)</p>
+            </div>
+        </div>
 
-.comment-content {
-  flex: 1;
-}
+        <div class="section">
+            <h2>Dessert - nachspeise</h2>
+            <div class="dish">
+                <p>Tiramis&ugrave; <span class="price">5,00&euro;</span></p>
+		                    <p class="description"></p>
+            </div>
+            <div class="dish">
+                <p>Panna Cotta <span class="price">4,50&euro;</span></p>
+		                    <p class="description"></p>
+            </div>
+            <div class="dish">
+                <p>souffl&eacute; al cioccolato <span class="price">4,50&euro;</span></p>
+		                    <p class="description"></p>
+            </div>
+            <div class="dish">
+                <p>1 kugeleis <span class="price">4,50&euro;</span></p>
+		<p class="description">(Vanille und Schokolade)</p>
+ </div> </div> </div>
+</section>
+</body>
+<!-- Div per le scintille -->
+<div id="spark-container"></div>
 
-.comment-author {
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #fff; /* Testo bianco */
-}
-
-.comment-date {
-  font-size: 12px;
-  color: #888;
-  margin-bottom: 10px;
-}
-
-.comment-text {
-  font-size: 14px;
-  color: #fff; /* Testo bianco */
-}
-
-.facebook-link {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #3b5998;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 18px;
-    }
-    .facebook-link:hover {
-        background-color: #2d4373;
-    }
-	
-	        .instagram-link {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #833ab4; /* Colore di Instagram */
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 18px;
-    }
-    .instagram-link:hover {
-        background-color: #6e27c5; /* Colore di Instagram scuro al passaggio del mouse */
-    }
-	
-	        .youtube-link {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #ff0000; /* Colore di YouTube */
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 18px;
-    }
-    .youtube-link:hover {
-        background-color: #cc0000; /* Colore di YouTube scuro al passaggio del mouse */
-    }
-	        .custom-link {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #000; /* Colore di sfondo del link */
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 18px;
-    }
-    .custom-link:hover {
-        background-color: #000; /* Colore di sfondo del link al passaggio del mouse */
-    }
-	
-
-    .tiktok-link {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #69c9d0; /* Colore di TikTok */
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 18px;
-   
-		 }
-    .tiktok-link:hover {
-        background-color: #5aafba; /* Colore di TikTok scuro al passaggio del mouse */
-    }
+</body>
+</html>
