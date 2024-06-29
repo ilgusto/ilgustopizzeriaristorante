@@ -3,6 +3,7 @@ header {
   background-color: #000;
   position: relative;
   color: white;
+	  margin-bottom: 20px; /* Aggiungi questa linea per creare spazio */
 }
 
 
