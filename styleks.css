@@ -164,7 +164,7 @@ header {
 .header-with-gradient {
     background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.5) 100%);
     /* Gradient che va dall'alto verso il basso */
-    padding: 20px 0;
+
     text-align: center;
     position: relative;
     color: white;
