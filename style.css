@@ -1,6 +1,5 @@
 .header-with-gradient {
   background: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0.5));
-  padding: 20px 0;
   text-align: center;
   position: relative;
   color: white;
