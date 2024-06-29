@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ilgusto</title>
+    <title>Ilgusto</title>
     <meta name="author" content="DevincenziUndMaggiolo">
-    <meta name="description" content="ilgusto restaurant bei: Zum Sportpark 1, 90602 Pyrbaum">
+    <meta name="description" content="Ilgusto restaurant bei: Zum Sportpark 1, 90602 Pyrbaum">
     <meta name="keywords" content="ilgusto">
     <link rel="icon" sizes="192x192" href="logo2.png">
     <link rel="icon" sizes="512x512" href="logo2.png">
     <link rel="icon" href="logo2.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styleinx.css">
-    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="styleks.css">
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+    <script defer src="scripts.js"></script>
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
@@ -31,45 +33,21 @@
             </nav>
         </div>
     </header>
-<div class=spaced> </div> 
-    <section class="background-section">
-        <section class="homeheader">
-            <div class="labelbar">
-                <div class="oro">
-                    <h1>Willkommen bei Il Gusto</h1>
-                </div>
-                <font size="20">ein paar Fotos</font><br />
-                <div id="boxes" class="photo-gallery">
-                    <div class="photo-section">
-                        <p class="big-text">Tartufo</p>
-                        <img src="slide-2.png" alt="Foto 1" draggable="false">
-                    </div>
-                    <div class="photo-section reverse">
-                        <p class="big-text">Bolognese</p>
-                        <img src="slide-3.png" alt="Foto 2" draggable="false">
-                    </div>
-                    <div class="photo-section">
-                        <p class="big-text">Pizza Ape</p>
-                        <img src="slide-4.png" alt="Foto 3" draggable="false">
-                    </div>
-                    <div class="photo-section reverse">
-                        <p class="big-text">Lasagne</p>
-                        <img src="slide-5.png" alt="Foto 4" draggable="false">
-                    </div>
-                    <div class="photo-section">
-                        <p class="big-text">Tiramisù</p>
-                        <img src="slide-6.png" alt="Foto 5" draggable="false">
-                    </div>
-                </div>
+
+    <div class="spaced"></div> 
+
+    <section class="homeheader">
+        <div class="centered-text">
+            <div class="oro">
+                <!-- Content for index.html -->
+                <h1>Willkommen bei Ilgusto!</h1>
+                <p>Genießen Sie authentische italienische Küche in Pyrbaum.</p>
             </div>
-        </section>
-        <div class="labelbar">         
-            <font size="7">Hallo, wir sind die Familie Maggiolo und De Vincenzi</font><br />
-            <font size="7">Wir sind hier, um Sie mit unseren Gerichten zu begeistern.</font><br />
         </div>
     </section>
 
-    <!-- Div per le scintille -->
+    <!-- Spark container if needed -->
     <div id="spark-container"></div>
+
 </body>
 </html>
