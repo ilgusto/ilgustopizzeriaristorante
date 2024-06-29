@@ -3,22 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ilgusto</title>
+    <title>Kommentare | Ilgusto</title>
     <meta name="author" content="DevincenziUndMaggiolo">
-    <meta name="description" content="ilgusto restaurant bei: Zum Sportpark 1, 90602 Pyrbaum">
-    <meta name="keywords" content="ilgusto">
+    <meta name="description" content="Kommentarbereich für Ilgusto Restaurant in Pyrbaum">
+    <meta name="keywords" content="ilgusto, Kommentare, Restaurant, Pyrbaum">
     <link rel="icon" sizes="192x192" href="logo2.png">
     <link rel="icon" sizes="512x512" href="logo2.png">
     <link rel="icon" href="logo2.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleks.css">
-	
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
-    <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
     <script defer src="scripts.js"></script>
     <link rel="manifest" href="manifest.json">
@@ -38,18 +33,19 @@
             </nav>
         </div>
     </header>
-</header>
-<div class=spaced> </div> 
-	    <section class="homeheader">
-	<div class="centered-text">
-		<div class="oro">
+
+    <div class="spaced"></div> 
+
+    <section class="homeheader">
+        <div class="centered-text">
+            <div class="oro">
 
                 <!-- Comment Form -->
-                <div id="commentForm" class="comment-form">
-                    <input type="text" id="commentAuthor" placeholder="Name">
-                    <textarea id="commentText" placeholder="Schreib hier!"></textarea>
-                    <button type="submit" id="submitComment">Absenden</button>
-                </div>
+        <div id="commentForm" class="comment-form">
+            <input type="text" id="commentAuthor" placeholder="Name">
+            <textarea id="commentText" placeholder="Schreiben Sie hier!"></textarea>
+            <button type="submit" id="submitComment">Absenden</button>
+        </div>
                 <!-- Comment Section -->
                 <div id="commentSection" class="comment-section">
                     <h3>Kommentare</h3>
