@@ -60,6 +60,175 @@
 
     <!-- Spark container if needed -->
     <div id="spark-container"></div>
+<style>body {
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
 
+header {
+    background-color: #000;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.menus {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menus li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menus li:last-child {
+    margin-right: 0;
+}
+
+.menus li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    display: block;
+}
+
+.menus li a:hover {
+    text-decoration: underline;
+}
+
+.menu {
+    max-width: 800px;
+    margin: auto;
+    background-color: none;
+	{filter: blur(10px); -webkit-filter: blur(10px);}
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.menu h1 {
+    text-align: center;
+    color: #CDA434;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+    background-color: #000;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.section h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.5em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+}
+
+.section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section ul li {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.section ul li:last-child {
+    border-bottom: none;
+}
+
+.section ul li:before {
+    content: "•";
+    color: #008f39;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.dish {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.dish p {
+    margin: auto;
+    color: #ffffff;
+    text-align: left;
+}
+
+.price {
+    color: #CDA434;
+    align: center;
+    text-align: center;
+}
+
+.description {
+    font-size: 0.9em;
+    color: #ffffff;
+    align: right;
+    text-align: right;
+}
+
+@media only screen and (max-width: 768px) {
+    .menus {
+        text-align: center;
+    }
+
+    .menus li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .menus li a {
+        display: block;
+        padding: 10px;
+    }
+
+    .menu {
+        padding: 10px;
+    }
+
+    .section {
+        padding: 10px;
+    }
+
+    .section h2 {
+        font-size: 1.2em;
+    }
+
+    .dish {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dish p {
+        text-align: center;
+    }
+}
+
+.header-with-gradient {
+    background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.5) 100%);
+    /* Gradient che va dall'alto verso il basso */
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+</style>
 </body>
 </html>
