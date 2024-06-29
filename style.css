@@ -3,6 +3,7 @@
   text-align: center;
   position: relative;
   color: white;
+	  margin-bottom: 20px; /* Aggiungi questa linea per creare spazio */
 }
 body {
   margin: 0;
@@ -16,6 +17,7 @@ header {
   background-color: #000;
   position: relative;
   color: white;
+	  margin-bottom: 20px; /* Aggiungi questa linea per creare spazio */
 }
 
 .header-container {
