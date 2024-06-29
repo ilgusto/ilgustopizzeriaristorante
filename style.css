@@ -14,7 +14,7 @@ body {
 
 header {
   background-color: #000;
-  padding: 20px 0;
+  padding: 43px 0;
   position: relative;
   color: white;
 }
@@ -27,115 +27,73 @@ header {
 }
 
 .logo {
-  height: 80px;
+  height: 70px;
 }
 
+/* Hamburger menu and responsive styles */
 .hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 24px;
-  width: 30px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 10;
-}
-
-.hamburger .bar {
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  border-radius: 10px;
-  transition: all 0.3s linear;
-  position: relative;
-}
-
-.nav-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 0;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.nav-menu .menus {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-menu .menus li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-.nav-menu .menus li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.5em;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-
-.nav-menu .menus li a::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #CDA434;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease;
-  z-index: -1;
-}
-
-.nav-menu .menus li a:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-@media (min-width: 769px) {
-  .header-container {
-    justify-content: center; /* Centra orizzontalmente */
-    height: 100px; /* Altezza fissa dell'intestazione */
-  }
-}
-@media (max-width: 768px) {
-	    .header-container {
-        display: flex;
-        align-items: center; /* Center vertically */
-        max-width: 1200px; /* Adjust max-width as needed */
-        margin: 0 auto; /* Center the container */
-    }
-  .nav-menu {
     display: none;
-    flex-direction: column;
-    width: 100%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 2000; /* Ensure hamburger is above the menu */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+    transform: translateX(0);
+    position: relative;
+    background-color: transparent; /* No background for large screens */
+    width: auto;
     text-align: center;
     padding: 0;
-	  margin-left: 20px; /* Add space between logo and menu on large screens */
-  }
+    z-index: 1000; /* Ensure menu is below the hamburger */
+}
 
-  .nav-menu.active {
-    display: flex;
-  }
+.nav-links.show {
+    transform: translateX(0);
+}
 
-  .hamburger {
-    display: flex;
-  }
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
 
-  .menus li {
-    margin: 10px 0;
-  }
+/* Styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        transform: translateX(-100%);
+        position: absolute;
+        left: 0;
+        top: 60px;
+        background-color: #111; /* Darker background color */
+        width: 100%;
+        padding: 10px 0;
+        z-index: 1500; /* Ensure menu is under the hamburger */
+    }
 
-  .menus li a {
-    font-size: 1.2em;
-  }
+    .nav-links.show {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    .logo {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
 }
 .homeheader {
   padding: 10% 0;
