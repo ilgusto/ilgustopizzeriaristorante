@@ -69,13 +69,213 @@
             <font size="7">Wir sind hier, um Sie mit unseren Gerichten zu begeistern.</font><br />
         </div>
     </section>
-
-                <h1>Willkommen bei Ilgusto!</h1>
-                <p>Genießen Sie authentische italienische Küche in Pyrbaum.</p>
             </div>
         </div>
     </section>
+<style>        .menus {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
+        .menus li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .menus li:last-child {
+            margin-right: 0;
+        }
+
+        .menus li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2em;
+            padding: 5px 10px;
+            display: block;
+        }
+
+        .menus li a:hover {
+            text-decoration: underline;
+        }
+
+        .menu {
+            max-width: 800px;
+            margin: auto;
+            background-color: #ff5353;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+.menu h1 {
+    text-align: center;
+    color: #CDA434;
+    margin-bottom: 20px;
+}
+
+
+        .section {
+            margin-bottom: 20px;
+            background-color: #ffeded;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #cc4242;
+            font-size: 1.5em;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 8px;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section ul li {
+            text-align: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section ul li:last-child {
+            border-bottom: none;
+        }
+
+        .section ul li:before {
+            content: "•";
+            color: #f77f00;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .dish {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .dish p {
+            margin: 0;
+            color: #cc4242;
+        }
+
+        .price {
+            color: #ff6b6b;
+        }
+
+        .description {
+            font-size: 0.9em;
+            color: #ffa0a0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .menus {
+                text-align: center;
+            }
+
+            .menus li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .menus li a {
+                display: block;
+                padding: 10px;
+            }
+
+            .menu {
+                padding: 10px;
+            }
+
+            .section {
+                padding: 10px;
+            }
+
+            .section h2 {
+                font-size: 1.2em;
+            }
+
+            .dish {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .dish p {
+                text-align: left;
+            }
+        }
+
+        .photo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .photo-section p {
+            flex: 1;
+            padding: 0 1px;
+        }
+
+        .photo-section img {
+            max-width: 60%;
+            height: auto;
+			border: none;
+        }
+
+        .reverse {
+            flex-direction: row-reverse;
+        }
+
+        .labelbar {
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .labelbar h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .labelbar font {
+            font-size: 1.5em;
+        }
+
+        .photo-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .photo-gallery .photo-section {
+            width: 100%;
+            max-width: 800px;
+        
+		.big-text {
+    font-size: 1em; 
+}
+
+.header-with-gradient {
+    background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.5) 100%);
+  
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+</style>
     <!-- Spark container if needed -->
     <div id="spark-container"></div>
 
