@@ -1,4 +1,13 @@
-        .menus {
+
+header {
+  background-color: #000;
+  padding: 43px 0;
+  position: relative;
+  color: white;
+}
+
+
+.menus {
             list-style-type: none;
             padding: 0;
             margin: 0;
