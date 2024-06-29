@@ -221,6 +221,136 @@ header {
     position: relative;
     color: white;
 }
+	
+/* Reset specifico solo dove necessario */
+.reset {
+  margin: 0;
+  padding: 0;
+ 
+}/* Esempio di utilizzo del reset solo dove serve */
+.page-without-reset .content {
+  /* Stili specifici per la pagina che non richiede il reset completo */
+}
+
+/* Stili per altre pagine che richiedono il reset completo */
+
+.page-with-reset * {
+  margin: 0;
+  padding: 0;
+  
+}
+/* Stili di base */
+.comment-form input[type="text"],
+.comment-form textarea {
+  width: 100%; /* Utilizza la larghezza massima disponibile */
+  max-width: 96%; /* Larghezza massima per adattarsi al contenitore */
+  padding: 10px; /* Spaziatura interna */
+  margin-bottom: 10px; /* Margine inferiore */
+  border: 1px solid #ccc; /* Bordo */
+  border-radius: 5px; /* Angoli arrotondati */
+  font-size: 14px; /* Dimensione del carattere */
+}
+
+/* Media query per schermi più piccoli */
+@media screen and (max-width: 768px) {
+  .comment-form input[type="text"],
+  .comment-form textarea {
+    max-width: 100%; /* Massima larghezza per adattarsi al contenitore */
+  }
+}
+
+/* Media query per schermi molto piccoli, come smartphone verticali */
+@media screen and (max-width: 480px) {
+  .comment-form input[type="text"],
+  .comment-form textarea {
+    max-width: 100%; /* Massima larghezza per adattarsi al contenitore */
+  }
+}
+/* Comment Form */
+.comment-form {
+  background: rgba(0, 0, 0, 0.7); /* Colore di sfondo nero con opacità 0.7 */
+  backdrop-filter: blur(10px); /* Effetto blur sullo sfondo */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto 20px auto; /* Aggiungo margine per centrare */
+  align: center;
+  align-item: center;
+  
+}
+
+.comment-form button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.comment-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Comment Section */
+.comment-section {
+  background: rgba(0, 0, 0, 0.7); /* Colore di sfondo nero con opacità 0.7 */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto; /* Aggiungo margine per centrare */
+}
+
+.comment-section h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #fff; /* Testo bianco */
+}
+
+.comment {
+  display: flex;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.comment-avatar {
+  margin-right: 20px;
+}
+
+.comment-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-author {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #fff; /* Testo bianco */
+}
+
+.comment-date {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.comment-text {
+  font-size: 14px;
+  color: #fff; /* Testo bianco */
+}
 </style>
 <!-- Div per le scintille -->
 <div id="spark-container"></div>
