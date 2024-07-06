@@ -83,8 +83,8 @@ h1 {
 }
 
 .hamburger-menu div {
-    width: 25px; /* Ridotto da 35px a 25px per renderle più sottili */
-    height: 3px; /* Ridotto da 5px a 3px per renderle più sottili */
+    width: 40px; /* Ridotto da 35px a 25px per renderle più sottili */
+    height: 5px; /* Ridotto da 5px a 3px per renderle più sottili */
     background-color: #fff; /* Cambia il colore delle barre a bianco */
     margin: 4px 0; /* Ridotto il margine per un aspetto più compatto */
     transition: 0.4s;
@@ -97,7 +97,7 @@ h1 {
 
 /* Trasformazioni per ottenere l'effetto di "X" */
 .change .bar1 {
-    transform: rotate(-45deg) translate(-5px, 4px);
+    transform: rotate(-45deg) translate(-6px, 6px);
 }
 
 .change .bar2 {
@@ -105,7 +105,7 @@ h1 {
 }
 
 .change .bar3 {
-    transform: rotate(45deg) translate(-5px, -6px);
+    transform: rotate(45deg) translate(-6px, -7px);
 }
 
 .nav-links {
