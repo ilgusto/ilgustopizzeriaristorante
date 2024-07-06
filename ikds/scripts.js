@@ -121,7 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadComments();
 });
-
 // script.js
 
 document.getElementById('hamburger-menu').addEventListener('click', function() {
