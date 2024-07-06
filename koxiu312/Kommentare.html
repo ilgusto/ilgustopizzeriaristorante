@@ -39,6 +39,15 @@
     </header>
 
     <div class="spaced"></div> 
+	    <h2>Lascia una Recensione</h2>
+    <button onclick="openReviewPopup()">Lascia una Recensione su Google</button>
+
+    <script>
+        function openReviewPopup() {
+            var reviewUrl = 'IL_TUO_LINK_DI_GOOGLE';
+            window.open(reviewUrl, 'popup', 'width=600,height=600');
+        }
+    </script>
 
     <section class="homeheader">
         <div class="centered-text"><script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
