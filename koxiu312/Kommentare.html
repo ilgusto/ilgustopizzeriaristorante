@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilgusto</title>
+    <meta name="author" content="DevincenziUndMaggiolo">
+    <meta name="description" content="Ilgusto restaurant bei: Zum Sportpark 1, 90602 Pyrbaum">
+    <meta name="keywords" content="ilgusto">
+    <link rel="icon" sizes="192x192" href="../shs/logo2.png">
+    <link rel="icon" sizes="512x512" href="../shs/logo2.png">
+    <link rel="icon" href="../shs/logo2.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../sda/saas.css">
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+    <script defer src="../ikds/scripts.js"></script>
+    <link rel="manifest" href="../sdas/manifest.json">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img class="logo" src="../shs/logs.png" alt="Logo" draggable="false">
+            <div class="hamburger" id="hamburger">&#9776;</div>
+            <nav class="nav-links" id="nav-links">
+                <ol class="menus">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../21zwsp42/Speisekarte.html">Speisekarte</a></li>
+                    <li><a href="../21zkkte24/Kontakte.html">Kontakte</a></li>
+                    <li><a href="../koxiu312/Kommentare.html">Kommentare</a></li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <div class="spaced"></div> 
+
+    <section class="homeheader">
+        <div class="centered-text">
+            <div class="oro">
+
+                <!-- Comment Form -->
+        <div id="commentForm" class="comment-form">
+            <input type="text" id="commentAuthor" placeholder="Name">
+            <textarea id="commentText" placeholder="Schreiben Sie hier!"></textarea>
+            <button type="submit" id="submitComment">Absenden</button>
+        </div>
+                <!-- Comment Section -->
+                <div id="commentSection" class="comment-section">
+                    <h3>Kommentare</h3>
+                    <div id="comments"></div>
+                </div>
+		    
+<style>body {
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+
+header {
+    background-color: #000;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.menus {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menus li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menus li:last-child {
+    margin-right: 0;
+}
+
+.menus li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    display: block;
+}
+
+.menus li a:hover {
+    text-decoration: underline;
+}
+
+.menu {
+    max-width: 800px;
+    margin: auto;
+    background-color: none;
+	{filter: blur(10px); -webkit-filter: blur(10px);}
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.menu h1 {
+    text-align: center;
+    color: #CDA434;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+    background-color: #000;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.section h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.5em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+}
+
+.section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section ul li {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.section ul li:last-child {
+    border-bottom: none;
+}
+
+.section ul li:before {
+    content: "•";
+    color: #008f39;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.dish {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.dish p {
+    margin: auto;
+    color: #ffffff;
+    text-align: left;
+}
+
+.price {
+    color: #CDA434;
+    align: center;
+    text-align: center;
+}
+
+.description {
+    font-size: 0.9em;
+    color: #ffffff;
+    align: right;
+    text-align: right;
+}
+
+@media only screen and (max-width: 768px) {
+    .menus {
+        text-align: center;
+    }
+
+    .menus li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .menus li a {
+        display: block;
+        padding: 10px;
+    }
+
+    .menu {
+        padding: 10px;
+    }
+
+    .section {
+        padding: 10px;
+    }
+
+    .section h2 {
+        font-size: 1.2em;
+    }
+
+    .dish {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dish p {
+        text-align: center;
+    }
+}
+
+.header-with-gradient {
+    background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.5) 100%);
+    /* Gradient che va dall'alto verso il basso */
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+	
+/* Reset specifico solo dove necessario */
+.reset {
+  margin: 0;
+  padding: 0;
+ 
+}/* Esempio di utilizzo del reset solo dove serve */
+.page-without-reset .content {
+  /* Stili specifici per la pagina che non richiede il reset completo */
+}
+
+/* Stili per altre pagine che richiedono il reset completo */
+
+.page-with-reset * {
+  margin: 0;
+  padding: 0;
+  
+}
+/* Stili di base */
+.comment-form input[type="text"],
+.comment-form textarea {
+  width: 100%; /* Utilizza la larghezza massima disponibile */
+  max-width: 96%; /* Larghezza massima per adattarsi al contenitore */
+  padding: 10px; /* Spaziatura interna */
+  margin-bottom: 10px; /* Margine inferiore */
+  border: 1px solid #ccc; /* Bordo */
+  border-radius: 5px; /* Angoli arrotondati */
+  font-size: 14px; /* Dimensione del carattere */
+}
+
+/* Media query per schermi più piccoli */
+@media screen and (max-width: 768px) {
+  .comment-form input[type="text"],
+  .comment-form textarea {
+    max-width: 100%; /* Massima larghezza per adattarsi al contenitore */
+  }
+}
+
+/* Media query per schermi molto piccoli, come smartphone verticali */
+@media screen and (max-width: 480px) {
+  .comment-form input[type="text"],
+  .comment-form textarea {
+    max-width: 100%; /* Massima larghezza per adattarsi al contenitore */
+  }
+}
+/* Comment Form */
+.comment-form {
+  background: rgba(0, 0, 0, 0.7); /* Colore di sfondo nero con opacità 0.7 */
+  backdrop-filter: blur(10px); /* Effetto blur sullo sfondo */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto 20px auto; /* Aggiungo margine per centrare */
+  align: center;
+  align-item: center;
+  
+}
+
+.comment-form button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.comment-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Comment Section */
+.comment-section {
+  background: rgba(0, 0, 0, 0.7); /* Colore di sfondo nero con opacità 0.7 */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto; /* Aggiungo margine per centrare */
+}
+
+.comment-section h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #fff; /* Testo bianco */
+}
+
+.comment {
+  display: flex;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.comment-avatar {
+  margin-right: 20px;
+}
+
+.comment-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-author {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #fff; /* Testo bianco */
+}
+
+.comment-date {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.comment-text {
+  font-size: 14px;
+  color: #fff; /* Testo bianco */
+}
+</style>
+<!-- Div per le scintille -->
+<div id="spark-container"></div>
+
+</body>
+</html>
