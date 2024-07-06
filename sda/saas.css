@@ -84,46 +84,32 @@ header {
     transition: 0.4s;
 }
 
-/* Media query per dispositivi mobili (max-width 768px) */
-@media screen and (max-width: 768px) {
-    .hamburger-menu {
-        cursor: pointer;
-        display: inline-block; /* Mostra l'hamburger solo su dispositivi mobili */
-    }
-
-    /* Stili aggiuntivi per l'hamburger su dispositivi mobili */
-    .hamburger-menu div {
-        background-color: #000; /* Colore nero per le barre sull'hamburger su dispositivi mobili */
-    }
-
-    /* Nascondi il menu di navigazione quando l'hamburger è visibile */
-    .nav-links {
-        display: none;
-    }
-
-    /* Mostra il menu di navigazione quando l'hamburger è cliccato */
-    .nav-links.show {
-        display: block;
-    }
-}
 
 
 /* Stile iniziale delle barre */
 .bar1, .bar2, .bar3 {
-    transition: transform 0.4s;
+  transition: transform 0.4s;
+  background-color: #fff; /* Colore bianco per le barre sull'hamburger */
+  color: white;
 }
 
 /* Trasformazioni per ottenere l'effetto di "X" */
 .change .bar1 {
     transform: rotate(-45deg) translate(-5px, 4px);
+    background-color: #fff; /* Colore bianco per le barre sull'hamburger */
+  color: white;
 }
 
 .change .bar2 {
     opacity: 0;
+    background-color: #fff; /* Colore bianco per le barre sull'hamburger */
+  color: white;
 }
 
 .change .bar3 {
     transform: rotate(45deg) translate(-5px, -6px);
+    background-color: #fff; /* Colore bianco per le barre sull'hamburger */
+  color: white;
 }
 
 .nav-links {
