@@ -31,7 +31,7 @@ header {
 
 .logo {
   height: 70px;
-  align: center;
+  align-items: center;
 }
 
 .menus {
@@ -60,56 +60,52 @@ header {
 .menus li a:hover {
   text-decoration: underline;
 }
+.h1 {
+  color: #fff;
+}
+h1 {
+  color: #fff;
+}
 
 /* Hamburger menu and responsive styles */
+
+/* styles.css */
+
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* styles.css */
-
-/* Stile predefinito per l'hamburger (sugli schermi grandi) */
 .hamburger-menu {
-    display: none; /* Nascondi l'hamburger sugli schermi grandi */
+    cursor: pointer;
+    display: inline-block;
 }
 
-/* Stile per le barre dell'hamburger */
 .hamburger-menu div {
-    width: 25px;
-    height: 3px;
-    background-color: #fff; /* Colore bianco per le barre sull'hamburger */
-    margin: 4px 0;
+    width: 25px; /* Ridotto da 35px a 25px per renderle più sottili */
+    height: 3px; /* Ridotto da 5px a 3px per renderle più sottili */
+    background-color: #fff; /* Cambia il colore delle barre a bianco */
+    margin: 4px 0; /* Ridotto il margine per un aspetto più compatto */
     transition: 0.4s;
 }
 
-
-
 /* Stile iniziale delle barre */
 .bar1, .bar2, .bar3 {
-  transition: transform 0.4s;
-  background-color: #fff; /* Colore bianco per le barre sull'hamburger */
-  color: white;
+    transition: transform 0.4s;
 }
 
 /* Trasformazioni per ottenere l'effetto di "X" */
 .change .bar1 {
     transform: rotate(-45deg) translate(-5px, 4px);
-    background-color: #fff; /* Colore bianco per le barre sull'hamburger */
-  color: white;
 }
 
 .change .bar2 {
     opacity: 0;
-    background-color: #fff; /* Colore bianco per le barre sull'hamburger */
-  color: white;
 }
 
 .change .bar3 {
     transform: rotate(45deg) translate(-5px, -6px);
-    background-color: #fff; /* Colore bianco per le barre sull'hamburger */
-  color: white;
 }
 
 .nav-links {
@@ -119,26 +115,9 @@ header {
 .nav-links.show {
     display: block;
 }
-.nav-links {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease;
-  transform: translateX(0);
-  position: relative;
-  background-color: transparent;
-  width: auto;
-  text-align: center;
-  padding: 0;
-  z-index: 1000;
-}
-
-.nav-links.show {
-  transform: translateX(0);
-    text-align: center;
-}
 
 .nav-links a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-size: 18px;
     text-align: center;
