@@ -78,7 +78,57 @@ header {
     padding: 10px 0;
     text-align: center;
 }
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.hamburger-menu {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.hamburger-menu div {
+    width: 25px; /* Ridotto da 35px a 25px per renderle più sottili */
+    height: 3px; /* Ridotto da 5px a 3px per renderle più sottili */
+    background-color: #fff; /* Cambia il colore delle barre a bianco */
+    margin: 4px 0; /* Ridotto il margine per un aspetto più compatto */
+    transition: 0.4s;
+}
+
+/* Stile iniziale delle barre */
+.bar1, .bar2, .bar3 {
+    transition: transform 0.4s;
+}
+
+/* Trasformazioni per ottenere l'effetto di "X" */
+.change .bar1 {
+    transform: rotate(-45deg) translate(-5px, 4px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.nav-links {
+    display: none;
+}
+
+.nav-links.show {
+    display: block;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+    text-align: center;
+}
 .menus {
     list-style-type: none;
     padding: 0;
