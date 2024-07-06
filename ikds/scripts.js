@@ -122,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function() {
     loadComments();
 });
 
-
 // script.js
 
 document.getElementById('hamburger-menu').addEventListener('click', function() {
@@ -130,6 +129,7 @@ document.getElementById('hamburger-menu').addEventListener('click', function() {
     document.getElementById('nav-links').classList.toggle('show');
 });
 
+// Gestione del click sui link nel menu
 document.querySelectorAll('.menus a').forEach(item => {
     item.addEventListener('click', function() {
         // Chiudi il menu mobile dopo aver cliccato su un link
