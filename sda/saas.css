@@ -70,17 +70,16 @@ header {
 
 /* styles.css */
 
-/* Stile predefinito per l'hamburger */
+/* Stile predefinito per l'hamburger (sugli schermi grandi) */
 .hamburger-menu {
-    cursor: pointer;
-    display: none; /* Nascondi l'hamburger di default */
+    display: none; /* Nascondi l'hamburger sugli schermi grandi */
 }
 
-/* Stili per le barre dell'hamburger */
+/* Stile per le barre dell'hamburger */
 .hamburger-menu div {
     width: 25px;
     height: 3px;
-    background-color: #000; /* Colore nero per le barre */
+    background-color: #fff; /* Colore bianco per le barre sull'hamburger */
     margin: 4px 0;
     transition: 0.4s;
 }
@@ -88,7 +87,13 @@ header {
 /* Media query per dispositivi mobili (max-width 768px) */
 @media screen and (max-width: 768px) {
     .hamburger-menu {
+        cursor: pointer;
         display: inline-block; /* Mostra l'hamburger solo su dispositivi mobili */
+    }
+
+    /* Stili aggiuntivi per l'hamburger su dispositivi mobili */
+    .hamburger-menu div {
+        background-color: #000; /* Colore nero per le barre sull'hamburger su dispositivi mobili */
     }
 
     /* Nascondi il menu di navigazione quando l'hamburger è visibile */
