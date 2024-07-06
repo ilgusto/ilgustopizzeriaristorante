@@ -121,18 +121,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadComments();
 });
-// script.js
 
 document.getElementById('hamburger-menu').addEventListener('click', function() {
     this.classList.toggle('change');
     document.getElementById('nav-links').classList.toggle('show');
-});
-
-// Gestione del click sui link nel menu
-document.querySelectorAll('.menus a').forEach(item => {
-    item.addEventListener('click', function() {
-        // Chiudi il menu mobile dopo aver cliccato su un link
-        document.getElementById('hamburger-menu').classList.remove('change');
-        document.getElementById('nav-links').classList.remove('show');
-    });
 });
