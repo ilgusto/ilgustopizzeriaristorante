@@ -68,18 +68,40 @@ header {
     align-items: center;
 }
 
+/* styles.css */
+
+/* Stile predefinito per l'hamburger */
 .hamburger-menu {
     cursor: pointer;
-    display: inline-block;
+    display: none; /* Nascondi l'hamburger di default */
 }
 
+/* Stili per le barre dell'hamburger */
 .hamburger-menu div {
-    width: 25px; /* Ridotto da 35px a 25px per renderle più sottili */
-    height: 3px; /* Ridotto da 5px a 3px per renderle più sottili */
-    background-color: #fff; /* Cambia il colore delle barre a bianco */
-    margin: 4px 0; /* Ridotto il margine per un aspetto più compatto */
+    width: 25px;
+    height: 3px;
+    background-color: #000; /* Colore nero per le barre */
+    margin: 4px 0;
     transition: 0.4s;
 }
+
+/* Media query per dispositivi mobili (max-width 768px) */
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: inline-block; /* Mostra l'hamburger solo su dispositivi mobili */
+    }
+
+    /* Nascondi il menu di navigazione quando l'hamburger è visibile */
+    .nav-links {
+        display: none;
+    }
+
+    /* Mostra il menu di navigazione quando l'hamburger è cliccato */
+    .nav-links.show {
+        display: block;
+    }
+}
+
 
 /* Stile iniziale delle barre */
 .bar1, .bar2, .bar3 {
