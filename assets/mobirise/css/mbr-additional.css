@@ -2691,3 +2691,10 @@ a {
 .cid-urXgNyGHAO .mbr-section-title {
   color: #ffffff;
 }
+
+.btn-danger2, .btn-danger2:active {
+    box-shadow: none;
+    color: #ffffff !important;
+    border-color: #40c351 !important;
+    background-color: #40c351 !important;
+}
